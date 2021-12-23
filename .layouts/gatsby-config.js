@@ -2,13 +2,13 @@ const path = require("path");
 const pathPrefix = "/";
 // Change me
 const siteMetadata = {
-  title: "Foam Template for Gatsby Theme Primer Wiki",
-  shortName: "Wiki",
+  title: "Artefactual Neural Network",
+  shortName: "ANN",
   description:
-    "Another Foam template that use gatsby-theme-primer-wiki, Welcome to your new Foam Knowledge Base!",
-  twitterName: "theowenyoung",
-  imageUrl: "/graph-visualisation.jpg",
-  siteUrl: "https://demo-foam.owenyoung.com",
+    "",
+  // twitterName: "theowenyoung",
+  // imageUrl: "/graph-visualisation.jpg",
+  // siteUrl: "https://demo-foam.owenyoung.com",
 };
 module.exports = {
   siteMetadata,
@@ -23,18 +23,18 @@ module.exports = {
       options: {
         icon: "./static/logo.png",
         sidebarComponents: ["latest", "tag"],
-        nav: [
-          {
-            title: "Github",
-            url: "https://github.com/theowenyoung/foam-template-gatsby-theme-primer-wiki/",
-          },
-          {
-            title: "Twitter",
-            url: "https://twitter.com/theowenyoung",
-          },
-        ],
+        // nav: [
+        //   {
+        //     title: "Github",
+        //     url: "https://github.com/theowenyoung/foam-template-gatsby-theme-primer-wiki/",
+        //   },
+        //   {
+        //     title: "Twitter",
+        //     url: "https://twitter.com/theowenyoung",
+        //   },
+        // ],
         editUrl:
-          "https://github.com/theowenyoung/foam-template-gatsby-theme-primer-wiki/tree/main/",
+          "https://github.com/dfeng/notes/tree/main/",
       },
     },
     {
