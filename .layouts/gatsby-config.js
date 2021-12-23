@@ -2,7 +2,7 @@ const path = require("path");
 const pathPrefix = "/notes";
 // Change me
 const siteMetadata = {
-  title: "Artefactual Neural Network",
+  title: "Artifactual Neural Network",
   shortName: "ANN",
   description:
     "",
