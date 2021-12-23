@@ -21,7 +21,7 @@ module.exports = {
       resolve: "gatsby-theme-primer-wiki",
       // Change me
       options: {
-        icon: "./static/logo.jpg",
+        icon: "./static/logo.webp",
         sidebarComponents: ["latest", "tag"],
         // nav: [
         //   {
@@ -54,7 +54,7 @@ module.exports = {
         start_url: pathPrefix,
         background_color: `#f7f0eb`,
         display: `standalone`,
-        icon: path.resolve(__dirname, "./static/logo.jpg"),
+        icon: path.resolve(__dirname, "./static/logo.webp"),
       },
     },
     {
