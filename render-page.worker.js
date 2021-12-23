@@ -449,7 +449,7 @@ var __webpack_exports__ = {};
 
 ;// CONCATENATED MODULE: ./node_modules/fuse.js/dist/fuse.esm.js
 /**
- * Fuse.js v6.5.2 - Lightweight fuzzy-search (http://fusejs.io)
+ * Fuse.js v6.5.3 - Lightweight fuzzy-search (http://fusejs.io)
  *
  * Copyright (c) 2021 Kiro Risk (http://kiro.me)
  * All Rights Reserved. Apache Software License 2.0
@@ -759,7 +759,10 @@ function norm(weight = 1, mantissa = 3) {
 }
 
 class FuseIndex {
-  constructor({ getFn = Config.getFn, fieldNormWeight = Config.fieldNormWeight } = {}) {
+  constructor({
+    getFn = Config.getFn,
+    fieldNormWeight = Config.fieldNormWeight
+  } = {}) {
     this.norm = norm(fieldNormWeight, 3);
     this.getFn = getFn;
     this.isCreated = false;
@@ -899,7 +902,11 @@ class FuseIndex {
   }
 }
 
-function createIndex(keys, docs, { getFn = Config.getFn, fieldNormWeight = Config.fieldNormWeight } = {}) {
+function createIndex(
+  keys,
+  docs,
+  { getFn = Config.getFn, fieldNormWeight = Config.fieldNormWeight } = {}
+) {
   const myIndex = new FuseIndex({ getFn, fieldNormWeight });
   myIndex.setKeys(keys.map(createKey));
   myIndex.setSources(docs);
@@ -907,7 +914,10 @@ function createIndex(keys, docs, { getFn = Config.getFn, fieldNormWeight = Confi
   return myIndex
 }
 
-function parseIndex(data, { getFn = Config.getFn, fieldNormWeight = Config.fieldNormWeight } = {}) {
+function parseIndex(
+  data,
+  { getFn = Config.getFn, fieldNormWeight = Config.fieldNormWeight } = {}
+) {
   const { keys, records } = data;
   const myIndex = new FuseIndex({ getFn, fieldNormWeight });
   myIndex.setKeys(keys);
@@ -2089,34 +2099,17 @@ class Fuse {
         return []
       }
 
-      /*eslint indent: [2, 2, {"SwitchCase": 1}]*/
-      switch (node.operator) {
-        case LogicalOperator.AND: {
-          const res = [];
-          for (let i = 0, len = node.children.length; i < len; i += 1) {
-            const child = node.children[i];
-            const result = evaluate(child, item, idx);
-            if (result.length) {
-              res.push(...result);
-            } else {
-              return []
-            }
-          }
-          return res
-        }
-        case LogicalOperator.OR: {
-          const res = [];
-          for (let i = 0, len = node.children.length; i < len; i += 1) {
-            const child = node.children[i];
-            const result = evaluate(child, item, idx);
-            if (result.length) {
-              res.push(...result);
-              break
-            }
-          }
-          return res
+      const res = [];
+      for (let i = 0, len = node.children.length; i < len; i += 1) {
+        const child = node.children[i];
+        const result = evaluate(child, item, idx);
+        if (result.length) {
+          res.push(...result);
+        } else if (node.operator === LogicalOperator.AND) {
+          return []
         }
       }
+      return res
     };
 
     const records = this._myIndex.records;
@@ -2218,7 +2211,7 @@ class Fuse {
   }
 }
 
-Fuse.version = '6.5.2';
+Fuse.version = '6.5.3';
 Fuse.createIndex = createIndex;
 Fuse.parseIndex = parseIndex;
 Fuse.config = Config;
