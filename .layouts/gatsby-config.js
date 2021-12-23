@@ -45,7 +45,14 @@ module.exports = {
         ignore: [`**/\.*/**/*`],
       },
     },
-
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-remark-mathjax`,
+        ],
+      },
+    },
     {
       resolve: "gatsby-plugin-manifest",
       options: {
