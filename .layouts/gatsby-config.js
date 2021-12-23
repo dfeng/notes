@@ -1,5 +1,5 @@
 const path = require("path");
-const pathPrefix = "/";
+const pathPrefix = "/notes";
 // Change me
 const siteMetadata = {
   title: "Artefactual Neural Network",
@@ -8,7 +8,7 @@ const siteMetadata = {
     "",
   // twitterName: "theowenyoung",
   // imageUrl: "/graph-visualisation.jpg",
-  // siteUrl: "https://demo-foam.owenyoung.com",
+  siteUrl: "http://dfeng.github.io/notes/",
 };
 module.exports = {
   siteMetadata,
