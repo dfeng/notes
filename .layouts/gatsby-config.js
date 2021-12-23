@@ -22,7 +22,9 @@ module.exports = {
       // Change me
       options: {
         icon: "./static/logo.webp",
+        mdxOtherwiseConfigured: true,
         sidebarComponents: ["latest", "tag"],
+        // remarkPlugins: [require("remark-math")],
         // nav: [
         //   {
         //     title: "Github",
@@ -38,19 +40,68 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [".md"],
+        remarkPlugins: [
+          require("remark-inline-links"),
+          require("remark-unwrap-images"),
+          require("remark-math")
+        ],
+        rehypePlugins: [[require("rehype-mathjax/chtml"), {fontURL: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2"}]],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: "gatsby-remark-rewrite-link-for-trailing-slash",
+            options: {
+              fileIgnore: [],
+              rewriteToParentUrlFileIgnore: [],
+            },
+          },
+
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              icon: false,
+            },
+          },
+          {
+            resolve: `gatsby-remark-relative-images`,
+            options: {
+              include: ["image"],
+            },
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 561,
+              showCaptions: ["title", "alt"],
+            },
+          },
+          {
+            resolve: `gatsby-remark-copy-linked-files`,
+            options: {
+              ignoreFileExtensions: [".md"]
+                .map((item) => item.slice(1))
+                .concat([
+                  `.png`,
+                  `.jpg`,
+                  `.jpeg`,
+                  `.bmp`,
+                  `.tiff`,
+                  ".svg",
+                  ".gif",
+                ]),
+            },
+          },
+        ],
+      },
+    },
+    {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "content",
         path: `${__dirname}/..`,
         ignore: [`**/\.*/**/*`],
-      },
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          `gatsby-remark-mathjax`,
-        ],
       },
     },
     {

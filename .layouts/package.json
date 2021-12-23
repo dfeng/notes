@@ -21,6 +21,9 @@
     "gatsby-source-filesystem": "^3.12.0",
     "gatsby-theme-primer-wiki": "^1.13.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "remark-math": "^3.0.0",
+    "rehype-katex": "^3.0.0",
+    "rehype-mathjax": "^3.0.0"
   }
 }
