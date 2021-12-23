@@ -48,7 +48,8 @@ module.exports = {
           require("remark-unwrap-images"),
           require("remark-math")
         ],
-        rehypePlugins: [[require("rehype-mathjax/chtml"), {fontURL: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2"}]],
+        // rehypePlugins: [[require("rehype-mathjax/chtml"), {fontURL: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2"}]],
+        rehypePlugins: [require("rehype-katex")],
         gatsbyRemarkPlugins: [
           {
             resolve: "gatsby-remark-rewrite-link-for-trailing-slash",
@@ -124,13 +125,6 @@ module.exports = {
         host: siteMetadata.siteUrl,
         sitemap: `${siteMetadata.siteUrl}/sitemap/sitemap-index.xml`,
         policy: [{ userAgent: "*", allow: "/" }],
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-gtag`,
-      options: {
-        // You can add multiple tracking ids and a pageview event will be fired for all of them.
-        trackingIds: [],
       },
     },
   ],
