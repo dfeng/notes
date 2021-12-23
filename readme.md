@@ -4,4 +4,4 @@ tags:
 
 # Artifactual Neural Network
 
-Here be gradients.
+Here be gradients. Testing if $x$ works.
