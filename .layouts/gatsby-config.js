@@ -23,7 +23,7 @@ module.exports = {
       options: {
         icon: "./static/logo.webp",
         // mdxOtherwiseConfigured: true,
-        sidebarComponents: ["latest", "categories", "tag"],
+        sidebarComponents: ["latest", "tag"],
         remarkPlugins: [require("remark-math")],
         rehypePlugins: [require("rehype-katex")],
         // nav: [
