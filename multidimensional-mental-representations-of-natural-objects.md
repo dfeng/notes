@@ -6,7 +6,9 @@ tags:
 
 # Multidimensional Mental Representations of Natural Objects
 
-src: [@Hebart:2020uz], and an earlier version in [ICLR](https://arxiv.org/abs/1901.02915).
+ - src: (@Hebart:2020uz)
+ - [arXiv](https://psyarxiv.com/7wrgh/)
+ - [ICLR](https://arxiv.org/abs/1901.02915) (earlier version)
 
 ## Contemplations
 

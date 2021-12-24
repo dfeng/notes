@@ -24,7 +24,11 @@ module.exports = {
         icon: "./static/logo.webp",
         // mdxOtherwiseConfigured: true,
         sidebarComponents: ["latest", "tag"],
-        remarkPlugins: [require("remark-math")],
+        remarkPlugins: [
+          require("remark-math"),
+          [require("remark-footnotes"), { inlineNotes: true}],
+          [require("@supremum/remark-bibtex"), { bibtexFile: "../bib.bib", numbers: false}]
+        ],
         rehypePlugins: [require("rehype-katex")],
         // nav: [
         //   {
