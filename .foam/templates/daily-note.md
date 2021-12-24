@@ -1,4 +1,5 @@
 ---
+draft: true
 tags:
   - journal
   - "year-${CURRENT_YEAR}"
