@@ -14,7 +14,7 @@ tags:
 
 ### Distributed Representation
 
-![](https://media.springernature.com/m4000/springer-static/image/art%3A10.1038%2Fs41562-020-00951-3/MediaObjects/41562_2020_951_Fig1_HTML.png)
+![General Workflow](img/41562_2020_951_Fig1_HTML.png)
 
 The idea of "distributed representation" (`word2vec`) is that a) words are represented as high-dimensional vectors, and b) words that cooccur should be closer together. What this means is that you can simply ingest a large corpus of unstructured text, collecting co-occurrence data, and learning a distributed representation along the way. The beautiful thing about this approach is that the only thing it relies on is some notion of co-occurrence; in the case of language, this is simply a window function.
 
@@ -28,7 +28,7 @@ $$
 
 where the first summation is over all triplets, but, crucially, we designate $(i,j)$ to be the chosen pair (i.e. $k$ is the odd one out). The $l_1$ penalty induces sparsity on the vectors, which improves interpretability. Finally, and I'm not sure exactly how they implement this, but they also enforce the weights of the vector to be positive, to provide an additional modicum of interpretability.^[I feel like they overemphasize these two points, sparsity and positivity, as a way to differentiate themselves from other methods, when it's really quite the trivial change from a technical perspective.]
 
-![](https://media.springernature.com/m4000/springer-static/image/art%3A10.1038%2Fs41562-020-00951-3/MediaObjects/41562_2020_951_Fig3_HTML.png)
+![Interpretable dimensions](img/41562_2020_951_Fig3_HTML.png)
 
 What is the output of this model? Ostensibly, it is a "distributed representation" of how we as humans organize our understanding of objects, albeit also conflating the particulars of the image used to represent this object.^[Does the prompt ask the subject to consider the image as an archetype, or simply ask to compare the three images on face value, whatever they see fit? My guess is probably the latter.] Note that even though we're dealing with the visual domain, the open-endedness of the task means that humans aren't necessarily just using visual cues for comparison, but might also be utilizing higher order notions.
 
@@ -39,11 +39,11 @@ Supposing we solve all those problems, we're still left with the question of how
 
 ### Typicality
 
-The idea here is that the magnitude of a particular dimension should import some meaning, the most likely being the *typicality* of this object to this particular feature (e.g. food-related). What they do is pick 17 broad categories (the graphs in Figure \@ref(fig:typicality)) that have a corresponding dimension in the vector representation, then for each image/object in this category (e.g. there are 19 images in the Drink category, corresponding to 19 points on the graph), they get humans to rate the typicality of that image for that category.
+The idea here is that the magnitude of a particular dimension should import some meaning, the most likely being the *typicality* of this object to this particular feature (e.g. food-related). What they do is pick 17 broad categories (the graphs below) that have a corresponding dimension in the vector representation, then for each image/object in this category (e.g. there are 19 images in the Drink category, corresponding to 19 points on the graph), they get humans to rate the typicality of that image for that category.
 
-![](https://media.springernature.com/m4000/springer-static/image/art%3A10.1038%2Fs41562-020-00951-3/MediaObjects/41562_2020_951_Fig7_HTML.png)
+![Typicality scores](img/41562_2020_951_Fig7_HTML.png)
 
-This result is somewhat surprising to me. For one, if you give me a list of images for, say, the category of animals, I would have no idea how to rate them based on *typicality*. Like, I think it would involve something cultural, regarding perhaps the stereotypes of what an animal is. I can imagine there being some very crude gradation whereby there are the clear examples of atypical, and then clear examples of typical, and then the rest is just a jumble. It doesn't really appear that way from the data -- I would have to look at these images to get a better sense.^[As an aside, I wish they also included the values of all the other images too, not just those in this category. Perhaps they are all at close to zero, which would be great, but they don't mention it, so I assume the worst.]
+This result is somewhat surprising to me. For one, if you give me a list of images for, say, the category of animals, I would have no idea how to rate them based on *typicality*. Like, I think it would involve something cultural, regarding perhaps the stereotypes of what an animal is. I can imagine there being some very crude gradation whereby there are the clear examples of atypical, and then clear examples of typical, and then the rest is just a jumble. It doesn't really appear that way from the data – I would have to look at these images to get a better sense.^[As an aside, I wish they also included the values of all the other images too, not just those in this category. Perhaps they are all at close to zero, which would be great, but they don't mention it, so I assume the worst.]
 
 Also, how is it able to get at typicality through this model? I think what's illuminating to note is that, out of the 27 broad categories of images in this dataset, 17 can be found in the 49-dimensional vector representation. Here's what I think is probably happening (in particular for these 17 categories):
 
@@ -51,7 +51,7 @@ Also, how is it able to get at typicality through this model? I think what's ill
  - if two images are from the same category, and the third is different, then the same pair is most often picked (helping to form this particular dimension);
  - if all three images are picked, then I guess the odd one out is the one that's the least *typical*.
 
-Having laid it out like so, I'm starting to get a little skeptical about the results: it almost feels like this is a little too crude, and the data is not sufficiently expressive for a model to be able to learn something that's not just trivial. Put another way, this almost feels like a glorified way of learning the categories -- though, there's nothing necessarily wrong with that, since the (high-level) categories are obviously important.
+Having laid it out like so, I'm starting to get a little skeptical about the results: it almost feels like this is a little too crude, and the data is not sufficiently expressive for a model to be able to learn something that's not just trivial. Put another way, this almost feels like a glorified way of learning the categories – though, there's nothing necessarily wrong with that, since the (high-level) categories are obviously important.
 
 Perhaps it helps to consider the following generative model for images: suppose each image was represented by a sparse vector of weights, with many of the coordinates corresponding to broad categories. Set it up in a such a way that if you're in a broad category, then that dominates all other considerations (so it follows the pattern above). Then, simply run this odd-one-out task directly on these vectors, and see if you're able to recover these vectors.^[It almost feels like a weird autoencoder architecture...]
 
