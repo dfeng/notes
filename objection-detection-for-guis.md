@@ -1,7 +1,7 @@
 ---
 tags:
   - gui
-  - machine learning
+  - machine_learning
 ---
 
 # Object Detection for GUI

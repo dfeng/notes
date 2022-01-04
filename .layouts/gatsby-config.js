@@ -15,6 +15,7 @@ module.exports = {
   pathPrefix,
   flags: {
     DEV_SSR: true,
+    FAST_DEV: true,
   },
   plugins: [
     {
@@ -24,10 +25,12 @@ module.exports = {
         icon: "./static/logo.webp",
         // mdxOtherwiseConfigured: true,
         sidebarComponents: ["latest", "tag"],
+        imageMaxWidth: 600,
+        contentMaxWidth: 1200,
         remarkPlugins: [
           require("remark-math"),
           [require("remark-footnotes"), { inlineNotes: true}],
-          [require("@supremum/remark-bibtex"), { bibtexFile: "../bib.bib", numbers: false}]
+          [require("@supremum/remark-bibtex"), { bibtexFile: "../bib.bib"}]
         ],
         rehypePlugins: [require("rehype-katex")],
         // nav: [

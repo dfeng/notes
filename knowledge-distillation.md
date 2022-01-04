@@ -1,3 +1,9 @@
+---
+tags:
+  - machine_learning
+---
+
+
 # Knowledge Distillation
 
 As a constructive example, think of two similar classifications (two types of breeds of dogs). With one-hot encoding, these are orthogonal, and each class is essentially equivalent/exchangeable. However there's actually more structure to these classifications (you can imagine them being in some embedding space, and the dog classes should be closer together). I guess the phrase is *label similarity*.
