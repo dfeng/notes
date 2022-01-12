@@ -1,6 +1,6 @@
 ---
 tags:
- - #society
+ - society
 ---
 
 # Alone
