@@ -19,5 +19,3 @@ The architecture of a neural network imposes some kind of structure that lends i
 | Graph     | Nodes         | Edges      | *Arbitrary*    | V,E permute     |
 
 From [@Battaglia:2018vi]
-
-(Though, is that really what GNNs really do?)
