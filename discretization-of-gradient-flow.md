@@ -1,7 +1,7 @@
 ---
 tags:
  - neural_networks
- - optimization
+ - optimisation
 ---
 
 # Discretization of Gradient Flow
