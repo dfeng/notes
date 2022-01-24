@@ -2,7 +2,7 @@
 tags:
  - paper
  - lit_review
- - proj_interpolation
+ - interpolation
 ---
 
 # Benign Overfitting in Linear Regression
