@@ -208,7 +208,7 @@ const Post = ({ data, pageContext, location }) => {
           <PageFooter editUrl={editUrl} lastUpdated={lastUpdated} />
           <Giscus
             repo="dfeng/notes"
-            repoId="R_kgDOGksSGQ="
+            repoId="R_kgDOGksSGQ"
             category="Announcements"
             categoryId="DIC_kwDOGksSGc4CA4yr"
             mapping="specific"
