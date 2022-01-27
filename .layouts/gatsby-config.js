@@ -8,7 +8,7 @@ const siteMetadata = {
     "",
   // twitterName: "theowenyoung",
   // imageUrl: "/graph-visualisation.jpg",
-  siteUrl: "https://dfeng.github.io/notes/",
+  siteUrl: "https://notes-dfeng.vercel.app/",
 };
 module.exports = {
   siteMetadata,
