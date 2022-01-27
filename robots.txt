@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://dfeng.github.io/notes//sitemap/sitemap-index.xml
-Host: https://dfeng.github.io
+Sitemap: https://notes-dfeng.vercel.app//sitemap/sitemap-index.xml
+Host: https://notes-dfeng.vercel.app
