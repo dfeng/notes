@@ -1,5 +1,5 @@
 const path = require("path");
-const pathPrefix = "/notes";
+// const pathPrefix = "/";
 // Change me
 const siteMetadata = {
   title: "Artifactual Neural Network",
