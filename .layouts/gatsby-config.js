@@ -2,13 +2,13 @@ const path = require("path");
 const pathPrefix = "/";
 // Change me
 const siteMetadata = {
-  title: "Artifactual Neural Network",
-  shortName: "ANN",
+  title: "Deep, Mind?",
+  shortName: "DM",
   description:
     "",
   // twitterName: "theowenyoung",
   // imageUrl: "/graph-visualisation.jpg",
-  siteUrl: "https://notes-dfeng.vercel.app/",
+  siteUrl: "https://deepmind.vercel.app/",
 };
 module.exports = {
   siteMetadata,
