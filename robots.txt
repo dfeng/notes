@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://notes-dfeng.vercel.app//sitemap/sitemap-index.xml
-Host: https://notes-dfeng.vercel.app
+Sitemap: https://deepmind.vercel.app//sitemap/sitemap-index.xml
+Host: https://deepmind.vercel.app
