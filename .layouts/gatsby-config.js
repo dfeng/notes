@@ -15,7 +15,6 @@ module.exports = {
   pathPrefix,
   flags: {
     DEV_SSR: true,
-    FAST_DEV: true,
   },
   plugins: [
     {
@@ -26,6 +25,7 @@ module.exports = {
         // mdxOtherwiseConfigured: true,
         sidebarComponents: ["latest", "tag"],
         imageMaxWidth: 600,
+        defaultColorMode: "auto",
         contentMaxWidth: 1200,
         remarkPlugins: [
           require("remark-math"),
