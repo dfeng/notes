@@ -6,7 +6,7 @@ tags:
 
 # Monopoly in Tech
 
-This is quintessential Levine: taking a concept that seems pretty straightforward at first blush (the worry that tech companies are becoming monopolies -- duh, right?), and using very simple words and ideas to make you slowly realise that you haven't thought this through, clearly.
+This is quintessential Levine: taking a concept that seems pretty straightforward at first blush (the worry that tech companies are becoming monopolies – duh, right?), and using very simple words and ideas to make you slowly realise that you haven't thought this through, clearly.
 
 I aspire to create content like this.
 

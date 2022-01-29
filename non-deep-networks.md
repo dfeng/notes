@@ -1,6 +1,6 @@
 ---
 tags:
-  - paper
+  - from_paper
 ---
 
 # Non-deep Networks

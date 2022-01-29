@@ -1,6 +1,6 @@
 ---
 tags:
- - paper
+ - from_paper
  - lit_review
  - interpolation
 ---

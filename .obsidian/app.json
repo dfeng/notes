@@ -3,5 +3,5 @@
   "livePreview": true,
   "showFrontmatter": false,
   "promptDelete": false,
-  "fileSortOrder": "byModifiedTime"
+  "fileSortOrder": "alphabetical"
 }

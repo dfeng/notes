@@ -10,16 +10,11 @@ tags:
 
 We talk about gradient descent (GD), which is a first-order approximation (via Taylor expansion) of minimising some loss, and Newton's method (NM) is the second-order version. The key difference is in the *step-size*, which, in the second-order case, is actually the inverse Hessian (think curvature).
 
-Nesterov comes along, wonders if the GD is *optimal*. Turns out that if you make use of past gradients via momentum, then you can get better convergence (for convex problems). This is basically like *memory*.
+Nesterov comes along, wonders if the GD is *optimal*. Turns out that if you make use of past gradients via momentum, then you can get better convergence (for convex problems). This is basically like *memory*. See also [[discretization-of-gradient-flow]].
 
-What remains is still the *step-size*, which needs to pre-determined. Wouldn't it be nice to have an adaptive *step-size*? That's where AdaGrad enters the picture, and basically uses the inverse of the mean of the square of the past gradients as a proxy for step-size.
-The problem is that it treats the first gradient equally to the most recent one, which seems unfair. RMSProp makes the adjustment by having it be exponentially weighted, so that the more recent gradients are preferentially weighted.
+What remains is still the *step-size*, which needs to pre-determined. Wouldn't it be nice to have an adaptive *step-size*? That's where AdaGrad enters the picture, and basically uses the inverse of the mean of the square of the past gradients as a proxy for step-size. The problem is that it treats the first gradient equally to the most recent one, which seems unfair. RMSProp makes the adjustment by having it be exponentially weighted, so that the more recent gradients are preferentially weighted.
 
-Adam [@Kingma:2015us] is basically a combination of these two ideas: *momentum* and *adaptive step-size*, plus a bias correction term.^[I didn't think much of the bias correction, but supposedly it's a pretty big deal in practice.] One of its key properties is that it is scale-invariant (see [[effectiveness-of-normalised-quantities]]), meaning that if you multiply all the gradients by some constant, it won't change the gradient/movement.
-
-```{remark}
-Note here that the invariance of Adam is *over time*, while our penalty's invariance is over the parameters themselves.
-```
+Adam [@Kingma:2015us] is basically a combination of these two ideas: *momentum* and *adaptive step-size*, plus a bias correction term.^[I didn't think much of the bias correction, but supposedly it's a pretty big deal in practice.] One of its key properties is that it is scale-invariant (see [[effectiveness-of-normalised-quantities]]), meaning that if you multiply all the gradients by some constant, it won't change the gradient/movement. ^[Note here that the invariance of Adam is *over time*, while our penalty's invariance is over the parameters themselves.]
 
 One interpretation proffered in the paper is that it's like a **signal-to-noise** ratio: you have the first moment against the raw (uncentered) second moment. Essentially, the direction of movement is a normalised average of past gradients, in such a way that the more variability in your gradient estimates, the more uncertain the *algorithm* is, and so the smaller the step size.
 
@@ -27,8 +22,7 @@ In any case, this damn thing works amazingly well in practice. The thing is that
 
 ## Adam + Ratio
 
-Let's consider a simple test-bed to hopefully elicit some insight.
-In the context of the [[penalty-project]]: we want to understand why Adam + our penalty is able to recover the matrix. In our paper, we analyse the gradient of the ratio penalty, and give some heuristics for why it might be better than just the nuclear norm. However, all this analysis breaks down when you move to Adam, because the squared gradient term is applied element-wise.
+Let's consider a simple test-bed to hopefully elicit some insight. In the context of the [[penalty-project]]: we want to understand why Adam + our penalty is able to recover the matrix. In our paper, we analyse the gradient of the ratio penalty, and give some heuristics for why it might be better than just the nuclear norm. However, all this analysis breaks down when you move to Adam, because the squared gradient term is applied element-wise.
 
 This is why [@Arora:2019ug] work with gradient descent: things behave nicely and you are able to deal with the singular values directly, and everything becomes a matrix operation. It is only natural to try to extend this to Adam, except my feeling is that you can't really do that. Since we're now perturbing things element-wise, this basically breaks all the nice linear structure. That doesn't mean everything breaks down, but simply we can't resort to a concatenation of simple linear operations.^[Though, as we'll see below, breaking the linear structure might be why it's good.]
 

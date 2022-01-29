@@ -4,6 +4,8 @@ tags:
  - biologically_inspired
 ---
 
+# Calculus For Brain Computation
+
 src: [video](https://www.youtube.com/watch?v=_sOgIwyjrOA&feature=youtu.be), [pdf](https://simons.berkeley.edu/sites/default/files/docs/14061/rpassemblies.pdf)
 
 ![How fruit flies remember smells](img/flies_smell.png)

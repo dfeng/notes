@@ -1,6 +1,6 @@
 ---
 tags:
-  - paper
+  - from_paper
 ---
 
 # Can You Learn an Algorithm

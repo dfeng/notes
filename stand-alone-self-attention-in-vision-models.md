@@ -1,6 +1,6 @@
 ---
 tags:
-  - paper
+  - from_paper
 ---
 
 # Stand-Alone Self-Attention in Vision Models

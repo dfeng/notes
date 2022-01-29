@@ -1,6 +1,6 @@
 ---
 tags:
-  - paper
+  - from_paper
   - machine_learning
   - neural_tangent_kernel
 ---

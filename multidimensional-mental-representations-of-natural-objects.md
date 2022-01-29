@@ -1,6 +1,6 @@
 ---
 tags:
- - paper
+ - from_paper
  - psychology
 ---
 

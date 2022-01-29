@@ -1,7 +1,6 @@
 ---
 tags:
  - artificial_intelligence
- - GPT
  - machine_learning
  - psychology
 ---
