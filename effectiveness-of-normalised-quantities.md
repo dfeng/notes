@@ -14,7 +14,7 @@ $$
 \frac{L_1}{L_2} = \frac{ \sum \sigma_i }{ \sqrt{ \sum \sigma_i^2 } },
 $$
 
-where $\sigma_i$ are the singular values. The idea here is that we're interested in the relative size of our singular values, not the absolute sizes. Using the nuclear norm as a penalty means that you can simply push down all the entries of your matrix to minimise your penalty, without changing the "rank".
+where $\sigma_i$ are the singular values. The idea here is that we're interested in the relative size of our singular values, not the absolute sizes. Using the nuclear norm as a penalty means that you can simply push down all the entries of your matrix to decrease your penalty, without changing the "rank".
 
 <Note>Something that I haven't really wrapped my head around is why this is not a problem for things like sparse linear regression. My intuition tells me that it's probably because of the under-determined nature of matrix completion that makes it a different problem. After all, this behaviour only surfaces in the low-data regime.</Note>
 
