@@ -15,7 +15,7 @@ $$
 \min \|Y - X \beta\|_2^2 \text{ s.t. } \|\beta\|_p \leq s,
 $$
 
-![The OG image.](https://online.stat.psu.edu/onlinecourses/sites/stat508/files/lesson05/image_09.gif)
+![The OG image.](img/lasso.png)
 
 where there is a one-to-one relation between $\lambda$ and $s$. This different view provides a geometric interpretation: depending on the geometry induced by the $l_p$ ball that is the constraint set, you're going to get different kinds of solutions.
 
