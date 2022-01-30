@@ -32,12 +32,11 @@ Even though a lot of our knowledge is *guided*, for most of our general-purpose 
 
 ## Thoughts
 
-I'm not as familiar with the AI game literature, but at least in the context of NLP/image classification and DL, there seems to be an ideal sweet-spot in terms of finding the right kind of architecture that's powerful enough to learn, but is simple enough that you can run it on an extreme scale. I think that's partly why we still continue to innovate on the model side. If we hadn't done so, then we wouldn't have gotten [[transfer-learning]], which has been a boon for NLP.
+I'm not as familiar with the AI game literature, but at least in the context of NLP/image classification and DL, there seems to be an ideal sweet-spot in terms of finding the right kind of architecture that's powerful enough to learn, but is simple enough that you can run it on an extreme scale. I think that's partly why we still continue to innovate on the model side. If we hadn't done so, then we wouldn't have gotten [[transformers]], which has been a boon for NLP.
 
-What is pretty clear is that domain-knowledge injection is not *scalable* (think expert systems back in the day).
-What's better are general-purpose methodologies, and the more general-purpose, the better.
-However, this would suggest that something like CNNs are actually suboptimal, since convolutions are definitely highly specific to image classification. But I think that's part of the allure of [[graph-neural-networks]].
+What is pretty clear is that domain-knowledge injection is not *scalable* (think expert systems back in the day). What's better are general-purpose methodologies, and the more general-purpose, the better (update: no longer think this relationship is linear: [[generalised-neural-networks]]). However, this would suggest that something like CNNs are actually *suboptimal*, since convolutions are definitely highly specific to image classification. But I think that's part of the allure of [[graph-neural-networks]].
 
 Given the successes of CNN in image recognition, I suspect that for specific domain tasks, a little bit of domain knowledge can go a very long way (it's not like it's hard-coding edge detection, so it's still pretty general purpose).
 
-Finally, it feels like we just need to be better at *learning-to-learn*. I don't think it's necessarily a bad thing to take inspiration from human intelligence (since we're the only successful example). So, ultimately, I think the *bitter lesson* is really just a stop-gap until we can sufficiently narrow the emulation gap.
+Finally, it feels like we just need to be better at *learning-to-learn* (
+[[meta-learning]]). I don't think it's necessarily a bad thing to take inspiration from human intelligence (since we're the only successful example). So, ultimately, I think the *bitter lesson* is really just a stop-gap until we can sufficiently narrow the emulation gap.

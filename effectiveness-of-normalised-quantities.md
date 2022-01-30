@@ -8,13 +8,13 @@ tags:
 In the context of matrix completion, it is known that the *nuclear norm*, being a convex relaxation of the rank,^[You can think of these as the matrix version of the $l_1$ to $l_0$ duality.] has very nice low-rank recovery properties. However, in sparser regimes (not enough observed entries), the nuclear norm starts to falter. This is because there is sufficient ambiguity (equivalently, not enough constraints on the convex program).^[Recall that the convex program is something like $\min \|W\|_{\star} \text{ s.t. } P_{\Omega}(W^\star) = P_{\Omega}(W)$, where the $P_{\Omega}$ is the convenient operator to extract the observed entries.]
 Thus, minimising the nuclear norm doesn't actually recover the true matrix.
 
-However, it turns out that simply normalising it works wonder.^[It's non-convex, though, so we're on longer talking about using a convex solver. Here I am talking about running a gradient method to optimise this (and for some reason ADAM is far superior).] Consider the penalty, $L_{\star/F}$, which is given by
+However, it turns out that simply normalising it works wonder.^[It's non-convex, though; here I am talking about running a gradient method to optimise this (and for some reason ADAM is far superior).] Consider the penalty, $L_{\star/F}$, which is given by
 $$
 \frac{L_1}{L_2} = \frac{ \sum \sigma_i }{ \sqrt{ \sum \sigma_i^2 } },
 $$
-where $\sigma_i$ are the singular values. The idea here is that we're interested in the relative size of our singular values, not the absolute sizes. For instance, one way to decrease the nuclear norm penalty is to apply a dampening constant uniformly over the matrix entries. This doesn't change the rank (or effective rank, which usually care about relative sizes), and so such a direction shouldn't be promoted. This normalised penalty is obviously invariant to this.
+where $\sigma_i$ are the singular values. The idea here is that we're interested in the relative size of our singular values, not the absolute sizes. For instance, one way to decrease the nuclear norm penalty is to apply a dampening constant uniformly over the matrix entries. This doesn't change the rank (or effective rank, which usually care about relative sizes), and so such a direction shouldn't be promoted. This normalised penalty is invariant to this.
 
-<Note>It's probably instructive to compare this to sparse linear regression. </Note>
+At the same time, it's still differentiable, so it's better than using the actual rank of the matrix. And in fact, in real-world settings, we don't care that a matrix is *effectively* low rank, even if it is not exactly low-rank. So in practice we would probably want to anyway use the effective rank as our actual measure.^[Here lies one difference between this problem and sparse linear regression: the low-rank object there is a parameter, whereas here it is the data. Thus, there's nothing particularly bad about assuming that the beta vector is exactly sparse.]
 
 Compare this to the gradient accelerator ADAM, which, in a nutshell considers a normalised gradient sequence. That is, the update step is given by^[Granted, I am hiding some details, like how the summation is actually weighted to prioritise the most recent gradient, the division is element-wise, plus some computation tricks to ensure no division by zero.]
 
