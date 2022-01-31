@@ -23,10 +23,12 @@ Words close in the embedding space are often either synonyms (e.g. *happy* and
 
 This suggests to the following *decomposition*:
 $$
-\displaylines{P(w\vert dog) = f(w\vert species=dog) \times f(w\vert age=adult) \times P(w\vert is\_a\_pet) \\
-P(w\vert puppy) = f(w\vert species=dog) \times f(w\vert age=cub) \times P(w\vert is\_a\_pet) \\
-P(w\vert cat) = f(w\vert species=cat) \times f(w\vert age=adult) \times P(w\vert is\_a\_pet) \\
-P(w\vert kitten) = f(w\vert species=cat) \times f(w\vert age=cub) \times P(w\vert is\_a\_pet)}
+\begin{align*}
+P(w\vert dog) &= f(w\vert species=dog) \times f(w\vert age=adult) \times P(w\vert is\_a\_pet) \\
+P(w\vert puppy) &= f(w\vert species=dog) \times f(w\vert age=cub) \times P(w\vert is\_a\_pet) \\
+P(w\vert cat) &= f(w\vert species=cat) \times f(w\vert age=adult) \times P(w\vert is\_a\_pet) \\
+P(w\vert kitten) &= f(w\vert species=cat) \times f(w\vert age=cub) \times P(w\vert is\_a\_pet)
+\end{align*}
 $$
 That's how the ratios end up being the same, because you're basically cancelling the shared "hidden variables".
 
