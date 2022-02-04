@@ -1,6 +1,6 @@
 ---
 tags:
- - deep
+ - neural_networks
  - biologically_inspired
 ---
 
