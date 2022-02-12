@@ -1,6 +1,7 @@
 ---
 tags:
- - 
+ - interpolation
+ - idea
 ---
 
 # Ideas Around Interpolation
