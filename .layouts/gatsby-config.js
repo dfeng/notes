@@ -25,7 +25,7 @@ module.exports = {
         // mdxOtherwiseConfigured: true,
         sidebarComponents: ["latest", "tag"],
         imageMaxWidth: 600,
-        defaultColorMode: "night",
+        defaultColorMode: "day",
         contentMaxWidth: 1200,
         remarkPlugins: [
           require("remark-math"),
