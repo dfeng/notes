@@ -14,6 +14,8 @@ Here is where thinking in terms of compression might be helpful. The fact that w
 
 Recall that the idea behind image compression with FFT (great youtube video [here](https://www.youtube.com/watch?v=gGEBUdM0PVc)) is that you can represent an image as a sum of a sparse set of 2D-fourier bases (think 2D periodic waves). That is, most coefficients are negligible, and so you only need a sparse set of coefficients to reproduce the image.
 
+Suppose you pass in a large collection of bases 
+
 ## References
 
 [@sitzmann2020implicit]
