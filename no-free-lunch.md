@@ -15,6 +15,8 @@ Notation:
  - search algorithm $\mathcal{A}$ simply appends to this dataset (i.e. continues the search, ideally finding $x$'s that lead to smaller $f(x)$)
  - arbitrary performance measure $\Phi: d_Y^m \to \mathbb{R}$ (i.e. evaluate how good a search algorithm is)
 
+Suppose we want to find the minimum of $f$. Then, the search algorithm is exactly gradient descent, as in a proposal for the next step in the search.
+
 Key Points:
 
  - 
