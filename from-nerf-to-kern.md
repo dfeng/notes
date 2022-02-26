@@ -1,0 +1,11 @@
+---
+tags:
+ - neural_tangent_kernel 
+ - machine_learning
+---
+
+# From Nerf to Kern
+
+We can think of [[neural-representations]] as the composition of a set of some random fourier features/basis and a MLP (non-linear function). On the other hand, we have kernel methods, the gist of which is that you project your input space via a kernel into some more complicated, non-linear space, in the hopes that the resulting function to learn is linear. Meanwhile, there's theoretical work that shows that training infinitely wide neural networks corresponds to kernel regression with a particular kernel (NTK), I don't know where this fits in with everything just yet, but it's another piece of the puzzle.
+
+What we have is some sort of progression. Starting from MLPs (or generic neural networks), we have the most general architecture that doesn't use any sort of basis functions. Methods like NERF are the next step, starting with some random and small basis functions, not fully expressive enough to result in a linear function, but good enough for a small-sized MLP to resolve. At the other extreme, you have kernel methods, that basically do all the hard (non-linear) work up front with the kernels, leaving the last bit a trivial linear exercise. NTKs are a wrinkle in this description, as it seems to show equivalence of the two extremes, thereby closing the loop (?).
