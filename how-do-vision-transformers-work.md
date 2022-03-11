@@ -8,3 +8,5 @@ tags:
 
 # How Do Vision Transformers Work
 
+Data Augmentation:
+
