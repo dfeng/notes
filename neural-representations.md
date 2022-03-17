@@ -19,7 +19,12 @@ Here is where thinking in terms of compression might be helpful. The fact that w
 Recall that the idea behind image compression with FFT (great youtube video [here](https://www.youtube.com/watch?v=gGEBUdM0PVc)) is that you can represent an image as a sum of a sparse set of 2D-fourier bases (think 2D periodic waves). That is, most coefficients are negligible, and so you only need a sparse set of coefficients to reproduce the image. One way you can think about this is that you can start with the (deterministic) function $g: \mathbb{R}^2 \mapsto \mathbb{R}^{2k}$ that essentially stacks $k$ 2D-fourier bases, followed by a function $h: \mathbb{R}^{2k} \mapsto \mathbb{R}^3$. that takes a weighted sum of these bases. Note that the size of $k$ depends on the *resolution* of the image – it should be the number of pixels. Putting this together, we have $f = g \circ h$, which is a way of expressing an image through its fourier representation. One interpretation is that we've projected the input into a high-dimensional space, and then simply run a (sparse) linear model.^[Of course, when you actually do the FFT/DCT, you don't actually solve the linear model.]
 
 <Note>
-Note that actually, with a complete fourier basis, we've taken things to the extreme, so that the final function to be "learned" is the smoothest function possible, a linear one. After all, that is the point of using a complete basis – everything else is just linear combinations. It's just that the *fourier* basis elicits a sparse linear combination.
+Note that actually, with a complete fourier basis, we've taken things to the extreme, so that the final function to be "learned" is the smoothest function possible, a linear one. After all, that is the point of using a complete basis – everything else is just linear combinations. It's just that the fourier basis elicits a sparse linear combination.
 </Note>
 
 Now, suppose we wanted to learn $f$ in a data-driven manner using an MLP. Clearly we want to take advantage of the structure here. The natural thing to do is to replace $h$ with an MLP, and counterbalance that with a less expressive $g$. This is essentially a trade-off in expressivity between the two functions that compose $f$. If we knew the sparse coordinates of $g$, then we could get the lower-expressivity for free.
+
+## Ideas
+
+  - [ ] Is the performance a function of the total power (sum of magnitude/weights) of the fourier spectrum?
+  - [ ] Assuming random noise is dense in the fourier domain, we should expect the fourier basis to be similar in performance to other complete bases? The idea is that random noise is not smoother with any sort of projection.
