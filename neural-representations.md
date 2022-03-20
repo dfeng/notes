@@ -42,6 +42,10 @@ On the other hand, just because something elicits a sparse representation doesn'
  - [ ] This makes me wonder, are latent representations of images just learning fourier features? Probably not, right, since the fourier representation is highly periodic/non-regular.
  - [ ] I imagine there are multiple routes to latent representations. One can imagine trying to learn "independent" latent representations (it's a little like what they do in [@bardes2021vicreg] for [[self-supervised-learning]], except at the representation level), with the goal of finding the best one. Another way to think about it is that, latent variable learning will often find the easiest route (and so I imagine it won't get to fourier in a data-driven manner) – perhaps adding some "feature engineering" will produce better latent representations
 
+### Rethinking Convolutions
+
+The point of "attention" is that you go straight to global dependencies. Meanwhile, the point of the convolution operator is that you're getting local statistics that are shift-invariant. This suggests that you can bypass (local) convolutions altogether by operating in the fourier domain, since the spectral domain loses out because it breaks all the local information, but you don't have to worry about that when you're in attention land.
+
 ## Open Questions
 
   - [ ] Is the performance a function of the total power (sum of magnitude/weights) of the fourier spectrum?
