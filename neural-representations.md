@@ -28,13 +28,19 @@ Now, suppose we wanted to learn $f$ in a more data-driven manner. Let's reduce t
 
 What's interesting to me about this problem is that it harks back to a bygone era, where life revolved around function approximation. While, yes, everything is function approximation, there is a stark contrast between classic function approximation and say classifying images:
 
-1. I don't know how important this point is, but the fact that the data is dense in the input space. This is clearly very different
+1. I don't know how important this point is, but the fact that the data is dense in the input space. This is clearly very different from image classification, where the data distribution of natural images is oftentimes considered as a low-dimensional manifold of the full input space.
+2. This gets us back to [[classification-vs-regression]]!
 
 ## Ideas
 
 ### Generative Models
 
-Generative (image) models (like [[variational-autoencoders]]) perform roughly the same operation: starting from a "latent" representation, they then learn a function at the pixel level
+Many generative (image) models (like [[variational-autoencoders]]) perform roughly the same operation: starting from a "latent" representation, they then learn a function at the pixel level, as opposed to just learning a very high-dimensional vector. It feels like there should be something to be gained from expressing images through fourier bases here. In particular, I think a problem early on was that the results of these generative models were very smooth, which sounds exactly like this problem.
+
+On the other hand, just because something elicits a sparse representation doesn't necessarily make it good, especially when we're dealing with higher-level representations (which in some sense latent variable models strive for). It's almost a little like, there already exists a *natural bottleneck*, but we're not going to use it, since that bottleneck is simply capturing the redundancies of natural images, and nothing particularly helpful from an ==interpretable perspective==.
+
+ - [ ] This makes me wonder, are latent representations of images just learning fourier features? Probably not, right, since the fourier representation is highly periodic/non-regular.
+ - [ ] I imagine there are multiple routes to latent representations. One can imagine trying to learn "independent" latent representations (it's a little like what they do in [@bardes2021vicreg] for [[self-supervised-learning]], except at the representation level), with the goal of finding the best one. Another way to think about it is that, latent variable learning will often find the easiest route (and so I imagine it won't get to fourier in a data-driven manner) – perhaps adding some "feature engineering" will produce better latent representations
 
 ## Open Questions
 
