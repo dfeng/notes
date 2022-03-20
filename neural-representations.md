@@ -26,9 +26,17 @@ Now, suppose we wanted to learn $f$ in a more data-driven manner. Let's reduce t
 
 ## IO
 
+What's interesting to me about this problem is that it harks back to a bygone era, where life revolved around function approximation. While, yes, everything is function approximation, there is a stark contrast between classic function approximation and say classifying images:
 
+1. I don't know how important this point is, but the fact that the data is dense in the input space. This is clearly very different
 
 ## Ideas
+
+### Generative Models
+
+Generative (image) models (like [[variational-autoencoders]]) perform roughly the same operation: starting from a "latent" representation, they then learn a function at the pixel level
+
+## Open Questions
 
   - [ ] Is the performance a function of the total power (sum of magnitude/weights) of the fourier spectrum?
   - [ ] Assuming random noise is dense in the fourier domain, we should expect the fourier basis to be similar in performance to other complete bases? The idea is that random noise is not smoother with any sort of projection.
