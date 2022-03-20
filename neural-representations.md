@@ -22,7 +22,9 @@ Recall that the idea behind image compression with FFT (great youtube video [her
 Note that actually, with a complete fourier basis, we've taken things to the extreme, so that the final function to be "learned" is the smoothest function possible, a linear one. After all, that is the point of using a complete basis – everything else is just linear combinations. It's just that the fourier basis elicits a sparse representation, whereas other bases might not be.
 </Note>
 
-Now, suppose we wanted to learn $f$ in a more data-driven manner. Let's reduce the expressivity of $g$, while increasing the expressivity of $h$. In some sense the true $g$ already has lower expressivity (you only need the sparse set of basis functions), but that is data-dependent, so we can't really take advantage of that. We can replace the linear model $h$ with an MLP $h'$, and counterbalance that with a less expressive $g'$. How do we make a less expressive $g'$ that roughly approximates the original $g$? A simple solution is to simply pick a random subset of the basis functions (though perhaps it might make more sense to actually strategically pick basis functions). In some sense, all we're doing is balancing the expressivity between the two functions that compose $f$.
+Now, suppose we wanted to learn $f$ in a more data-driven manner. Let's reduce the expressivity of $g$, while increasing the expressivity of $h$. In some sense the true $g$ already has lower expressivity (you only need the sparse set of basis functions), but that is data-dependent, so we can't really take advantage of that. We can replace the linear model $h$ with an MLP $h'$, and counterbalance that with a less expressive $g'$. How do we make a less expressive $g'$ that roughly approximates the original $g$? A simple solution is to simply pick a random subset of the basis functions (though perhaps it might make more sense to actually strategically pick basis functions). And that, in a "nutshell" is what [@sitzmann2020implicit] proposes.
+
+## IO
 
 
 
