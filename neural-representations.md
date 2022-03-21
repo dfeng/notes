@@ -28,8 +28,8 @@ Now, suppose we wanted to learn $f$ in a more data-driven manner. Let's reduce t
 
 What's interesting to me about this problem is that it harks back to a bygone era, where life revolved around function approximation. While, yes, everything is function approximation, there is a stark contrast between classic function approximation and say classifying images:
 
-1. I don't know how important this point is, but the fact that the data is dense in the input space. This is clearly very different from image classification, where the data distribution of natural images is oftentimes considered as a low-dimensional manifold of the full input space.
-2. This gets us back to [[classification-vs-regression]]!
+1. I don't know how important this point is, but the data is dense in the input space. This is clearly very different from image classification, where the data distribution of natural images is oftentimes considered as a low-dimensional manifold of the full input space.
+2. This gets us back to [[classification-vs-regression]], and why perhaps neural networks are not the best when it comes to regression tasks.
 
 ## Ideas
 
@@ -37,14 +37,18 @@ What's interesting to me about this problem is that it harks back to a bygone er
 
 Many generative (image) models (like [[variational-autoencoders]]) perform roughly the same operation: starting from a "latent" representation, they then learn a function at the pixel level, as opposed to just learning a very high-dimensional vector. It feels like there should be something to be gained from expressing images through fourier bases here. In particular, I think a problem early on was that the results of these generative models were very smooth, which sounds exactly like this problem.
 
-On the other hand, just because something elicits a sparse representation doesn't necessarily make it good, especially when we're dealing with higher-level representations (which in some sense latent variable models strive for). It's almost a little like, there already exists a *natural bottleneck*, but we're not going to use it, since that bottleneck is simply capturing the redundancies of natural images, and nothing particularly helpful from an interpretable perspective.
+On the other hand, just because something elicits a sparse representation doesn't necessarily make it "good", especially when we're dealing with higher-level representations (which in some sense latent variable models strive for). It's almost a little like, there already exists a *natural bottleneck*, but we're not going to use it, since that bottleneck is simply capturing the redundancies of natural images, and nothing particularly helpful from an interpretable perspective.
 
  - [ ] This makes me wonder, are latent representations of images just learning fourier features? Probably not, right, since the fourier representation is highly periodic/non-regular.
  - [ ] I imagine there are multiple routes to latent representations. One can imagine trying to learn "independent" latent representations (it's a little like what they do in [@bardes2021vicreg] for [[self-supervised-learning]], except at the representation level), with the goal of finding the best one. Another way to think about it is that, latent variable learning will often find the easiest route (and so I imagine it won't get to fourier in a data-driven manner) – perhaps adding some "feature engineering" will produce better latent representations
 
 ### Rethinking Convolutions
 
-The point of "attention" is that you go straight to global dependencies. Meanwhile, the point of the convolution operator is that you're getting local statistics that are shift-invariant. This suggests that you can bypass (local) convolutions altogether by operating in the fourier domain, since the spectral domain loses out because it breaks all the local information, but you don't have to worry about that when you're in attention land.
+The point of "attention" is that you go straight to global dependencies. Meanwhile, the point of the convolution operator is that you're getting local statistics that are shift-invariant, and so you slowly merge local values together until you're effectively working at a global level. As we've seen in [[vision-transformers]], it sort of pays to do something akin to CNNs, in that you want to replicate local processing (e.g. via shifted windows like in [@liu2021swin]).
+
+Meanwhile, I suspect the reason nobody has succeeded in using fourier-transformed images with CNNs is that the transform itself breaks all the local information, and so there's no point in using CNNs. However, this is precisely where attention might be able to do its magic, since it doesn't rely on a local-to-global structure.
+
+ - [ ] Apply self-attention to fourier-transformed images instead of "patched" images.
 
 ## Open Questions
 
