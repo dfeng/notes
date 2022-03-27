@@ -33,9 +33,11 @@ What's interesting to me about this problem is that it harks back to a bygone er
 
 ### Noise-less
 
-The second interesting feature of this problem is that we are effectively dealing with a problem that has no noise – a case of [[transductive-learning]] if there ever was one. That is, there is no desire or need for "generalising", as the data distribution is the population, and there is no chance for "dataset drift". You wish to interpolate 
+The second interesting feature of this problem is that we are effectively dealing with a problem that has no noise – a case of [[transductive-learning]] if there ever was one. That is, there is no desire or need for "generalising", as the data distribution is the population, and there is no chance for "dataset drift". Interpolation is king.
 
-
+<Note>
+One need not consider the training set as the full image. For instance, in the paper, they use only every other pixel as the training set (which, together with an odd width gives a criss-cross pattern as opposed to just missing columns), and then the full set for testing. However, it's unclear (and unexplored) how much actual "generalisation" is possible with this method. Also, this reminds me of [[compressed-sensing]] / [[matrix-completion]], and the incoherence property.
+</Note>
 
 ## Ideas
 
