@@ -14,7 +14,7 @@ Consider the following (seemingly contrived) problem: learn the function $f:\mat
 
 To begin with, let's use an MLP to learn the function. All we're doing is learning a function from $[0,1]^2$ (first squeeze the image into the unit square) to $[0,1]^3$. Of course, the problem here is that this function is very much not smooth. However, it's also not the extreme case of learning an image of random noise, as there are patterns in the data (and possibly stretches of similar color in the background, for instance). Unsurprisingly, it is difficult for the MLP to learn this "function" – it simply learns a smooth function, which is basically a blurry version of the image.^[One might argue that MLPs are non-linear and so very much not smooth, in a proper functional analysis sense, and they would be right. Here I am using smoothness loosely to mean how bendy the function is (how able it is to interpolate random noise, say).]
 
-Here is where thinking in terms of compression might be helpful. The fact that we can compress most natural images (via representations in different bases) suggests that there should be a way to functionally represent an image in an *efficient* manner. The question is, how can we transform the space so that the function $f$ we're learning is **smooth(er)**? Perhaps unsurprisingly, it turns out that thinking in terms of fourier bases gets you pretty far.
+Here is where thinking in terms of compression might be helpful. The fact that we can compress most natural images (via representations in different bases) suggests that there should be a way to functionally represent an image in an *efficient* manner. The question is, how can we transform the space so that the function $f$ we're learning is more smooth? Perhaps unsurprisingly, it turns out that thinking in terms of fourier bases gets you pretty far.
 
 Recall that the idea behind image compression with FFT (great youtube video [here](https://www.youtube.com/watch?v=gGEBUdM0PVc)) is that you can represent an image as a sum of a sparse set of 2D-fourier bases (think 2D periodic waves). That is, most coefficients are negligible, and so you only need a sparse set of coefficients to reproduce the image. One way you can think about this is that you can start with the (deterministic) function $g: \mathbb{R}^2 \mapsto \mathbb{R}^{2k}$ that essentially stacks $k$ 2D-fourier bases, followed by a function $h: \mathbb{R}^{2k} \mapsto \mathbb{R}^3$. that takes a weighted sum of these bases. Note that the size of $k$ depends on the *resolution* of the image – it should be the number of pixels. Putting this together, we have $f = g \circ h$, which is a way of expressing an image through its fourier representation. One interpretation is that we've projected the input into a high-dimensional space, and then simply run a (sparse) linear model (aka [basis pursuit](https://en.wikipedia.org/wiki/Basis_pursuit)).^[Of course, when you actually do the FFT/DCT, you don't actually solve the linear model.]
 
@@ -30,6 +30,12 @@ What's interesting to me about this problem is that it harks back to a bygone er
 
 1. I don't know how important this point is, but the data is dense in the input space. This is clearly very different from image classification, where the data distribution of natural images is oftentimes considered as a low-dimensional manifold of the full input space.
 2. This gets us back to [[classification-vs-regression]], and why perhaps neural networks are not the best when it comes to regression tasks.
+
+### Noise-less
+
+The second interesting feature of this problem is that we are effectively dealing with a problem that has no noise – a case of [[transductive-learning]] if there ever was one. That is, there is no desire or need for "generalising", as the data distribution is the population, and there is no chance for "dataset drift". You wish to interpolate 
+
+
 
 ## Ideas
 
