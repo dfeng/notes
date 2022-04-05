@@ -26,10 +26,13 @@ Now, suppose we wanted to learn $f$ in a more data-driven manner. Let's reduce t
 
 ## IO
 
-What's interesting to me about this problem is that it harks back to a bygone era, where life revolved around function approximation. While, yes, everything is function approximation, there is a stark contrast between classic function approximation and say classifying images:
+What's interesting to me about this problem is that it harks back to a bygone era, where life revolved around function approximation. While, yes, everything is function approximation, there is a stark contrast between classic function approximation and classifying images:
 
-1. I don't know how important this point is, but the data is dense in the input space. This is clearly very different from image classification, where the data distribution of natural images is oftentimes considered as a low-dimensional manifold of the full input space.
-2. This gets us back to [[classification-vs-regression]], and why perhaps neural networks are not the best when it comes to regression tasks.
+Here, the data is "dense" in the input space. Now obviously I don't actually mean dense in the mathematical sense, since we only have the particular resolution of the image.^[Actually, one way you could think about this problem is that you have an image that is continous/infinite in resolution, and we are simply getting a sample of the "true" image. Of course there is no true image, and in fact very quickly this hits the limitation of the image capture device. But perhaps it's not right to think that there's no chance for generalisation.] This is coupled with a highly irregular outputs for each point in the input space.
+
+On the other hand, the input space for image classification is incredibly high-dimensional (though the actual distribution of natural images probably lives on a low-dimensional manifold in the full input space). This sort of necessitates the data being "sparse" in the input space. Meanwhile, the output space, at least for classification, is just a multinomial (or, like the Dirichlet, the k-simplex). Somehow it feels like the combination of 
+
+This gets us back to [[classification-vs-regression]], and why perhaps neural networks are not the best when it comes to regression tasks.
 
 ### Noise-less
 
