@@ -5,4 +5,8 @@ tags:
 
 # Self-supervised Learning
 
-In the AI podcast with LeCun, he points out that self-supervision is much easier in language tasks (think BERT and the masking problem there, whereby you hide 15% of words, which the model must the guess), since there it's just a classification problem, and quantifying your uncertainty is straightforward. On the other hand, doing self-supervised learning with vision tasks, images, is much trickier, for the simple reason that you don't really have uncertainty anymore. This gets us to [[classification-vs-regression]], sort of!
+### Text vs Images
+
+In the AI podcast episode with LeCun ([link](https://lexfridman.com/yann-lecun/)), he points out that self-supervision is much easier in language tasks (think BERT and the masking problem there, whereby you hide 15% of words, which the model must the guess), since there it's just a classification problem, and quantifying your uncertainty is straightforward. On the other hand, doing self-supervised learning with vision tasks, images, is much trickier, for the simple reason that you can't really deal with uncertainty. For instance, you can mask out portions of an image, but now you're dealing with a regression problem (which brings us back to [[classification-vs-regression]]).
+
+One problem
