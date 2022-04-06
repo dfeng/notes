@@ -28,9 +28,9 @@ Now, suppose we wanted to learn $f$ in a more data-driven manner. Let's reduce t
 
 What's interesting to me about this problem is that it harks back to a bygone era, where life revolved around function approximation. While, yes, everything is function approximation, there is a stark contrast between classic function approximation and classifying images:
 
-Here, the data is "dense" in the input space. Now obviously I don't actually mean dense in the mathematical sense, since we only have the particular resolution of the image.^[Actually, one way you could think about this problem is that you have an image that is continous/infinite in resolution, and we are simply getting a sample of the "true" image. Of course there is no true image, and in fact very quickly this hits the limitation of the image capture device. But perhaps it's not right to think that there's no chance for generalisation.] This is coupled with a highly irregular outputs for each point in the input space.
+Here, the data is "dense" in the input space. Now obviously I don't actually mean dense in the mathematical sense, since we only have the particular resolution of the image.^[Actually, one way you could think about this problem is that you have an image that is continous/infinite in resolution, and we are simply getting a sample of the "true" image. Of course there is no true image, and in fact very quickly this hits the limitation of the image capture device. But perhaps it's not right to think that there's no chance for generalisation.] This is coupled with a highly irregular output for each point in the input space.
 
-On the other hand, the input space for image classification is incredibly high-dimensional (though the actual distribution of natural images probably lives on a low-dimensional manifold in the full input space). This sort of necessitates the data being "sparse" in the input space. Meanwhile, the output space, at least for classification, is just a multinomial (or, like the Dirichlet, the k-simplex). Somehow it feels like the combination of 
+On the other hand, the input space for image classification is incredibly high-dimensional (though the actual distribution of natural images probably lives on a low-dimensional manifold in the full input space). This sort of necessitates the data being "sparse" in the input space. Meanwhile, the output space, at least for classification, is just a multinomial (or, like the Dirichlet, the k-simplex). Somehow it feels like this combination means one can learn pretty smooth functions.
 
 This gets us back to [[classification-vs-regression]], and why perhaps neural networks are not the best when it comes to regression tasks.
 
@@ -61,8 +61,14 @@ Meanwhile, I suspect the reason nobody has succeeded in using fourier-transforme
 
  - [ ] Apply self-attention to fourier-transformed images instead of "patched" images.
 
+**Update**: I'm not sure this part actually makes that much sense. The first problem is that attention doesn't really work at the image/pixel level, and that's why you sort of have to incorporate patches.
+
+It's worth noting that the Fourier transform of convolutions are just pointwise products of their Fourier transform, which can actually be performant in CNNs if the kernel is large enough (the cost of (i)FFT usually outweighs the simplification from convolution to products). How might we take advantage of this?
+
 ## Open Questions
 
   - [ ] Is the performance a function of the total power (sum of magnitude/weights) of the fourier spectrum?
   - [ ] Assuming random noise is dense in the fourier domain, we should expect the fourier basis to be similar in performance to other complete bases? The idea is that random noise is not smoother with any sort of projection.
+  - [ ] Similar to above, is sparsity actually important? The intuition I provide is that because there exists a sparse representation, then it's possible to start with a random assortment of bases and learn a small MLP. But perhaps it's the bases that matter more, and the expressivity is enough.
+  - [ ] Is there something special about the fourier basis? Do wavelets work?
   - [ ] Is random picking better than grid/strategic picking?
