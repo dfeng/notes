@@ -7,7 +7,7 @@ tags:
 
 # Momentum Contrast for Unsupervised Visual Representation Learning
 
-## MoCo as Dual Training
+## MoCo as Coupled Training
 
 ![Conceptual comparison of three contrastive loss mechanisms](img/moco.png)
 
