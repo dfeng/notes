@@ -3,6 +3,8 @@ tags:
  - implicit_regularisation
 ---
 
+# Implicit Regularisation
+
 In the spirit of [[envisioning-the-future]], let's think about the key questions in the area of implicit regularisation.
 
 The whole impetus for implicit regularisation is an attempt to explain the phenomenon of how neural networks rarely (if ever) overfit, even without explicit penalties. Or at least that's my interpretation of the goal. Having understood the exact mechanisms, one would hope that the insights should lead to more efficient algorithms.
@@ -18,7 +20,6 @@ Looking at the literature, people have been focused on trying to show that gradi
  - I hold the more hopeful view that this analysis should lead to better training and understanding generalisation, by replacing such black boxes with explicit renditions.
  - Another possibility is that a lot of the things that we've concluded about implicit regularisation are only applicable in the narrow problem of matrix completion. Though I think you see similar things in linear regression right? So I guess that shouldn't be true.
  - An important question is how things translate to more general settings, when you're dealing with non-linear.
-
  - I really think that one of the lessons of deep learning is the [[unreasonable-effectiveness-of-adam]] (or [[effectiveness-of-normalised-quantities]]). That is, you should always pick normalised terms over convex terms, because convexity is overrated.
 
 ## Story So Far
@@ -43,11 +44,11 @@ However, once you move into more complicated models, my feeling is that this *su
 
 The point of this is that as you get into more complicated models, this generalisation performance is more of an *art*, and, as such, we should expect that the resolution to the conundrum should also be more *artful* than the precise, simple, explicit way that was laid out in the cited papers.
 
-```{remark}
-What would be great would be some kind of *information* or *sparsity* measure that holds for general models, but when specialised down to linear neural networks, collapses to the singular values of the product matrix.
-```
+<Note>
+What would be great would be some kind of information or sparsity measure that holds for general models, but when specialised down to linear neural networks, collapses to the singular values of the product matrix.
+</Note>
 
-One of the worries that I have is that all of this just doesn't really generalise past linear neural networks, for the simple reason that a lot of the success of deep learning comes from these carefully constructed architectures for a specific data type, which suggests that there is something inherent in the data itself (some inductive bias in the distribution of pixels, for instance), and which this kind of theory has no way of capturing. ^[This was inspired by the last paragraph of this blog [article](http://www.offconvex.org/2018/02/17/generalisation2/): "I don’t see how to use the above ideas to demonstrate that the effective number of parameters in VGG19 is as low as 50k, as seems to be the case. I suspect doing so will force us to understand the structure of the data (in this case, real-life images) which the above analysis mostly ignores."]
+One of the worries that I have is that all of this just doesn't really generalise past linear neural networks, for the simple reason that a lot of the success of deep learning comes from these carefully constructed architectures for a specific data type, which suggests that there is something inherent in the data itself (some inductive bias in the distribution of pixels, for instance), and which this kind of theory has no way of capturing.^[This was inspired by the last paragraph of this blog article, http://www.offconvex.org/2018/02/17/generalisation2/: "I don’t see how to use the above ideas to demonstrate that the effective number of parameters in VGG19 is as low as 50k, as seems to be the case. I suspect doing so will force us to understand the structure of the data (in this case, real-life images) which the above analysis mostly ignores."]
 
 Or, another way to put this is that, these previous results suggest that any old over-parameterised neural network should have all these nice sparsity-inducing, acceleration-type properties. Though, maybe the key ingredient is: some sort of alignment with the kinds of sparsity that the data possesses.^[This must somehow relate to the whole sparsity of image data in the Fourier domain.] In other words, this notion of convolution (which I imagine was biologically inspired) might already have been optimised such that gradient methods^[hmmm, but biology doesn't work via gradients, so not sure if this makes sense] produce sparsity of the right kind.
 
