@@ -20,7 +20,7 @@ Looking at the literature, people have been focused on trying to show that gradi
  - I hold the more hopeful view that this analysis should lead to better training and understanding generalisation, by replacing such black boxes with explicit renditions.
  - Another possibility is that a lot of the things that we've concluded about implicit regularisation are only applicable in the narrow problem of matrix completion. Though I think you see similar things in linear regression right? So I guess that shouldn't be true.
  - An important question is how things translate to more general settings, when you're dealing with non-linear.
- - I really think that one of the lessons of deep learning is the [[unreasonable-effectiveness-of-adam]] (or [[effectiveness-of-normalised-quantities]]). That is, you should always pick normalised terms over convex terms, because convexity is overrated.
+ - I really think that one of the lessons of deep learning is the [[the-unreasonable-effectiveness-of-adam]] (or [[effectiveness-of-normalised-quantities]]). That is, you should always pick normalised terms over convex terms, because convexity is overrated.
 
 ## Story So Far
 

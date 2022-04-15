@@ -9,15 +9,11 @@ tags:
 
 The traditional way of thinking about networks is to treat them as essentially fixed, and samples from some generative model. Of course, we all know that networks don't just spontaneously appear. That being said, a) collecting the entire history of a network's evolution to its current state is often impossible, and b) dynamic models introduce too many more degrees of modelling freedom, so the purists generally shy away from it.
 
-A useful dynamic model is one where the dynamics is fairly simple, and yet interesting global features still manifest themselves (in the spirit of [[complexity-theory]]). The classic example of this is the Preferential Attachment (PA) model, which, by a very simple *rich-get-richer* adjustment to the Uniform Attachment (UA) model creates a power-law degree distribution. A simple description of these models is, at each time step $t$, we introduce a new vertex $v_t$, and we add $m$ new edges from this new one.^[i.e. each vertex has out-degree $m$.] The probability that an existing vertex has an edge to this vertex is either uniform (UA), or weighted by its current degree (PA),
+A useful dynamic model is one where the dynamics is fairly simple, and yet interesting global features still manifest themselves (in the spirit of [[complexity-theory]]). The classic example of this is the Preferential Attachment (PA) model, which, by a very simple *rich-get-richer* adjustment to the Uniform Attachment (UA) model creates a power-law degree distribution. A simple description of these models is, at each time step $t$, we introduce a new vertex $v_t$, and we add $m$ new edges from this new one.^[i.e. each vertex has out-degree $m$.] The probability that an existing vertex has an edge to this vertex is either uniform (UA), or weighted by its current degree (PA),^[Something that I only just realised after reading the wiki entry on the BA model is that they frame it thusly: you need both PA and growth for there to be scale-free structure, where growth simply means that the size of the network is growing.]
 
 $$
 P(A_{v_t, v_i}) = \frac{d_i}{\sum d_i}, \quad \forall i \in E.
 $$
-
-<Note>
-Something that I only just realised after reading the [wiki](https://en.wikipedia.org/wiki/Barabási–Albert_model) entry on the BA model is that they frame it thusly: you need both PA and *growth* for there to be scale-free structure, where growth simply means that the size of the network is growing.
-</Note>
 
 Thanks to [Bubeck](https://blogs.princeton.edu/imabandit/2014/03/30/on-the-influence-of-the-seed-graph-in-the-preferential-attachment-model/), a completely different view of PA models is to focus on the temporal/growth aspect of it -- by their very dynamics, we unlock a slew of different questions to ask. At a high level, the questions revolve around how much temporal information is recoverable from the final state?
 
