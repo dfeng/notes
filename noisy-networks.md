@@ -10,7 +10,7 @@ src: [@Chang:2018uw], [@Li:2020uy]
 
 A common task in network analysis is to calculate a network statistic, from which some conclusion can be gleaned. Oftentimes you'll have a table of typical summary statistics for your graphs, and they can be either (average) node-level statistics (like centrality), or global statistics (like edge density). There is usually not much import to those tables -- mainly used just so people can get a feel for the graph/dataset.
 
-Sometimes though you're interested in some particular real-valued functional of the network. For instance, in my previous work, we were interested in unbalanced triangles. Another statistic, very relevant to #coronavirus, is the branching factor, or $R_0$, of a contact network (see [@Li:2020uy] for more details).
+Sometimes though you're interested in some particular real-valued functional of the network. For instance, in my previous work, we were interested in unbalanced triangles. Another statistic, very relevant to coronavirus, is the branching factor, or $R_0$, of a contact network (see [@Li:2020uy] for more details).
 
 Whenever you have a statistic, you might want to know two things: how confident are you of this value, or what is the "variability" of this statistic; and whether or not this statistic is *significant*. Let's take this latter approach first. The idea here is that we have some hypothesis that we want to test, and so we need to first construct a null hypothesis, and the statistic is the mechanism (or measure) through which which we can judge the significance of our test. In the former case, all that we really want is just a set of confidence intervals for our statistic. It's almost the same thing, except there is no hypothesis -- all that is required is a random model that lets you define the form of the noise, and therefore construct confidence intervals.
 
@@ -22,11 +22,11 @@ The noise model analysed in these papers is very straightforward. It essentially
 Fix a graph $G$ (defined by its adjacency matrix $A$), which we think of as the ground truth. Then the noisy observation (adjacency matrix $\widetilde{A}$) are produced by random bit-flips (0 to 1 or 1 to 0). For simplicity, the random bit-flips are modelled with only two parameters: $\alpha$, the Type-1 error, and $\beta$, the Type-2 error. That is,
 
 $$
-  P(\widetilde{A}_{ij} = 1 \given A_{ij} = 0) = \alpha, \quad
-  P(\widetilde{A}_{ij} = 0 \given A_{ij} = 1) = \beta,
+  P(\widetilde{A}_{ij} = 1 \mid A_{ij} = 0) = \alpha, \quad
+  P(\widetilde{A}_{ij} = 0 \mid A_{ij} = 1) = \beta,
 $$
 
-Thus, you've reduced the whole problem to estimating two parameters.^[Which feels a little extreme.] Unsurprisingly, you use #method_of_moments to estimate them.
+Thus, you've reduced the whole problem to estimating two parameters.^[Which feels a little extreme.] Unsurprisingly, you use method_of_moments to estimate them.
 However, because you have two parameters, you're going to need more than one sample (i.e. two).
 
 Actually, I think it's a little more complicated than that (it's not really a degree-of-freedom thing).
@@ -39,7 +39,7 @@ This makes me think that a) if you restrict the $\alpha, \beta$ to be suitably s
 This is similar to the stochastic blockmodel, in that these parameters are really just nuisance parameters. In that model, you can actually estimate many things without actually knowing these nuisance parameters.
 
 <Note>
-It might seem weird to fix a graph. Clearly I cannot be too against this notion, since the test I propose also assumes a fixed *graph*. However, in that particular setting, I felt that was the best option. Not something that I thought was particularly realistic (but the alternatives, considering parametric models seemed even more riddled with problems).
+It might seem weird to fix a graph. Clearly I cannot be too against this notion, since the test I propose also assumes a fixed graph. However, in that particular setting, I felt that was the best option. Not something that I thought was particularly realistic (but the alternatives, considering parametric models seemed even more riddled with problems).
 
 In my opinion, this particular model must be considered together with the particular application. A concrete example would be protein networks. I don't know how these datasets are generated, and so it is unclear to me if such a noise model would be an accurate representation. The key thing here is that this is how we're modelling the multiple draws/samples.
 </Note>

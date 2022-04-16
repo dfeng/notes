@@ -14,7 +14,6 @@ A useful dynamic model is one where the dynamics is fairly simple, and yet inter
 $$
 P(A_{v_t, v_i}) = \frac{d_i}{\sum d_i}, \quad \forall i \in E.
 $$
-
 Thanks to [Bubeck](https://blogs.princeton.edu/imabandit/2014/03/30/on-the-influence-of-the-seed-graph-in-the-preferential-attachment-model/), a completely different view of PA models is to focus on the temporal/growth aspect of it -- by their very dynamics, we unlock a slew of different questions to ask. At a high level, the questions revolve around how much temporal information is recoverable from the final state?
 
 For instance, we might be interested in determining the "seed" of a network^[You can adjust the model by starting with a fixed seed network (instead of a single node).], e.g. to figure out the early core of the *internet*. In the case of a pandemic, reverse-engineering the infection/contact network might give insight into the early actors. Of course, no real-life network follows a PA model exactly, which leads to the more practical question of, how much temporal information is recoverable even under a corrupted model?

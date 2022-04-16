@@ -17,5 +17,4 @@ Their theorem/proof works in the contrapositive: for any function class smoothly
  - note that this result doesn't say that you'll fit a smooth function if you're overparameterising -- just that if you don't have enough parameters, then there's no way you're fitting a smooth one.
    + thus, in the context of scale (à la [[gpt3]]), this result says that scale is *necessary* to achieve robustness (though not sufficient).
 
- - the noise level here is defined as the expected conditional variance $\sigma^2 := \E[\mu]{\text{Var}(y \mid x)} > 0$. noise is necessary from a theoretical perspective, as it prevents fitting a smooth classifier with perfect accuracy.
-
+ - the noise level here is defined as the expected conditional variance $\sigma^2 := \mathbb{E}_{\mu}\left[\text{Var}(y \mid x)\right] > 0$. noise is necessary from a theoretical perspective, as it prevents fitting a smooth classifier with perfect accuracy.

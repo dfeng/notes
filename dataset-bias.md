@@ -10,8 +10,7 @@ src: [@Tommasi:2015tn]
 
 Machine learning fundamentally operates by finding patterns in datasets.^[I always knew that datasets were biased (especially given the whole fairness problem), and this leads to various problems, but I didn't realise this was a whole field of study. Fascinating.] As such, the particulars of the dataset that you train on will affect what possible models can be learned.
 
-Focusing on visual data for the moment, it is clear that, even while we are in the era of big data, most datasets cannot possibly capture every possible facet of visual information, ^[which ties into the problem of self-driving cars whereby your dataset can't possibly have every single possible circumstance, and thus it is these *way off in the tail* situations that cause the most headache, much like what people like Taleb always talk about.]
-and so someone has to contend with the ways in which there are blind spots or biases as a result of the particular curation of data.
+Focusing on visual data for the moment, it is clear that, even while we are in the era of big data, most datasets cannot possibly capture every possible facet of visual information,^[which ties into the problem of self-driving cars whereby your dataset can't possibly have every single possible circumstance, and thus it is these way off in the tail situations that cause the most headache, much like what people like Taleb always talk about.] and so someone has to contend with the ways in which there are blind spots or biases as a result of the particular curation of data.
 
 **Causes**:
 

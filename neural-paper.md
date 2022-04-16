@@ -1,3 +1,7 @@
+---
+tags:
+---
+
 # Towards a Unified Understanding of Neural Embeddings
 
  - Tancik showed, using NTK theory, that MLPs have a hard time learning high frequency signals

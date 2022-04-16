@@ -20,5 +20,4 @@ At this point, I need to digress and talk about what this paper does:
 
  - take the similarity matrix of the original GloVe vectors and the GloVe-img vectors. calculate the correlation of the matched entries. turns out that correlation can get as high as 0.3. perhaps that's surprising?
    + seems like a waste to project things down to a similarity matrix. on the other hand, the arbitrariness of embeddings might make it difficult to compare embeddings directly.
- - 
 
