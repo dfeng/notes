@@ -7,5 +7,5 @@ tags:
  - Tancik showed, using NTK theory, that MLPs have a hard time learning high frequency signals
  - it was shown in Barron that the approximation error of a 1-layer MLP (with sigmoidal activation functions) is governed by the power of the spectrum of the fourier transform of the signal – higher frequency signals are more difficult to approximate
  - Spectral Bias paper showed that MLPs learn the lower-frequencies first, then followed by the higher frequency signals (over the duration of training)
-	 - This feels like it's a little counter to 
- - MLPs
+
+Actually, what I think this all boils down to *noise*. Usually noise is the high frequency part (well more like, it causes the representation to require high frequency components). So, when you give the model too much capacity to learn these parts, then you're effectively learning the noise.
