@@ -12,3 +12,11 @@ Actually, what I think this all boils down to *noise*. Usually noise is the high
 
  - Fourier features enable MLPs to fit to worst-case functions fairly easily.
  - Given their (periodic) structure, fourier features are considerably more brittle/susceptible to noise (of the independent, localised kind).
+
+So, the story is something like:
+
+ - MLPs good function approximators
+ - the larger the power spectrum, the more difficult it is to learn
+ - fourier features allow us to bypass/circumvent this worst-case
+ - however, this comes at a cost. namely, that now we're very sensitive to noise
+ - this is because we're directly estimating the noise.
