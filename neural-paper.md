@@ -15,8 +15,7 @@ Actually, what I think this all boils down to *noise*. Usually noise is the high
 
 So, the story is something like:
 
- - MLPs good function approximators
- - the larger the power spectrum, the more difficult it is to learn
- - fourier features allow us to bypass/circumvent this worst-case
+ - MLPs are decent function approximators; the larger the power spectrum, the more difficult the function is to approximate.
+ - fourier features allow us to bypass/circumvent this worst-case. this is as good a free lunch, in that for not much work, you've made MLPs much more expressive as function approximators.
  - however, this comes at a cost. namely, that now we're very sensitive to noise
  - this is because we're directly estimating the noise.
