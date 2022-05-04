@@ -11,4 +11,4 @@ tags:
 Actually, what I think this all boils down to *noise*. Usually noise is the high frequency part (well more like, it causes the representation to require high frequency components). So, when you give the model too much capacity to learn these parts, then you're effectively learning the noise. The problem is you can't really differentiate between noise and signal when the signal is also of high frequency.
 
  - Fourier features enable MLPs to fit to worst-case functions fairly easily.
- - Given their (periodic) structure, fourier features are considerably more brittle/susceptible to noise (that is of the independent, localised kind).
+ - Given their (periodic) structure, fourier features are considerably more brittle/susceptible to noise (of the independent, localised kind).
