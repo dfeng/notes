@@ -8,4 +8,6 @@ In statistics, what you have is some mythical "population", from which you are t
 
 On the other extreme you have the topic of domain shift, and being able to "generalise" from that. However, that feels like an intractible problem in its generality (though you can probably come up with nice heuristics that somehow try to infer the shift from the data?).
 
-What I'm interested in is the more manageable version. I don't really want to put it into theory based on data distributions and samples, as I think that might restrict things. In a handwavy way
+What I'm interested in is the more manageable version. I don't really want to put it into theory based on data distributions and samples, as I think that restricts things. In a handwavy way, I want to be able to "generalise" in the sense that I should be good with the current data distribution, and perhaps a little bit robust to slight changes to it. Or, I guess another way to put it is to just let the data speak for itself.
+
+Suppose I have a large dataset $\mathcal{X}$. This is going to be more akin to sample-without-replacement kind of statistics. 
