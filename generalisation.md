@@ -18,4 +18,20 @@ I guess you could go to the extreme, leave-one-out, and simply ask to minimise
 $$
 \sum_{i=1}^{n} L(\mathcal{A}(\mathcal{X}_{-i})(x_i), y_i).
 $$
-So this is saying, we want to learn an algorithm that minimises leave-one-out error.
+So this is saying, we want to learn an algorithm that minimises leave-one-out error. Actually, that is not what we want, for the following handwavy reason (which hopefully I can convert into something concrete): the leave-one-out problem is a little too easy, since probably the best you can do is just find the closest example in the rest of the dataset (or something like $k$-nn). When you move to larger subsets for the test set, you run into the more difficult problem whereby you can't really just go with the local solution; or rather, you sort of have to learn something that works well with less data.
+
+There is a sort of nice correspondence between mini-batch SGD and this empirical cross-validatation risk, the latter which looks something like
+$$
+\arg\min_\theta \mathbb{E} \left( L(h_{\theta, X_{C}}(X_{C'}), Y_{C'}) \right),
+$$
+which you can approximate by sampling from the random variable each time, meaning we should minimise $L(h_{\theta, X_{c}}(X_{c'}), Y_{c'})$ for some randomly drawn $c \in C$. Meanwhile, at each step of SGD, we also draw a batch $c \in C$ and then optimise $L(h_{\theta}(X_{c'}), Y_{c'})$. Here, it's sort of like, before this step, our hypothesis was constructed from $X_{c}$ , and so it sort of works similarly.
+
+Okay, I guess I'm getting confused on which level we're doing the analysis. What I'm trying to get at is that our goal should be to construct a standardised procedure for creating hypotheses (that only depend on the training data) that minimise the risk. So really, what we have is actually instead
+$$
+\arg\min_\mathcal{A} \mathbb{E} \left( L(\mathcal{A}(X_{C})(X_{C'}), Y_{C'}) \right),
+$$
+since the goal is to learn a procedure, not parameters. And my argument is that, the (close-to) optimal procedure $\mathcal{A}$ is probably one that mirrors the loss. That is, taking the following $\mathcal{A}$: choose parameters via
+$$
+\arg\min_\theta \mathbb{E} \left( L(h_{\theta, X_{C}}(X_{C'}), Y_{C'}) \right),
+$$
+where the $C$ are subsets of the original training data $\mathcal{X}_C$ (and now the subscript doesn't have to be exactly $X_c$, since we technically get access to the whole thing). I can probably prove that this procedure is optimal, right? Actually, I guess the tricky part is whether or not making the $X_c$ more relaxed can give you better results. So really, I'm doing the same procedure, just on a smaller set. Clearly if we were doing LOO, then the results would be basically exactly the same, which makes it not interesting. But if the size of the test set is small in relation, it's still very close to optimal...
