@@ -18,4 +18,6 @@ What exactly is an effective representation? Alternatively, how do we evaluate t
 
 The straightforward answer is to just look at how useful these learned representations are on downstream tasks (i.e. how helpful it is for [[transfer-learning]]). A widely used evaluation protocol (see )
 
+## Literature Review
+
 Exploring Simple Siamese Representation Learning
