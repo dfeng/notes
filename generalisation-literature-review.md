@@ -4,3 +4,6 @@
 
 https://dl.acm.org/doi/pdf/10.1145/3446776
 
+[Stability and Generalization](https://www.jmlr.org/papers/volume2/bousquet02a/bousquet02a.pdf)
+
+ - interesting papaer
