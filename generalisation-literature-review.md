@@ -1,7 +1,7 @@
 # Generalisation Literature Review
 
 
-[Stability and Generalization](https://www.jmlr.org/papers/volume2/bousquet02a/bousquet02a.pdf)
+[@bousquet2002stability] : this seminal paper introduces the notion of *uniform stability*.
 
 > We explore here a different approach which is based on *sensitivity analysis*. Sensitivity analysis aims at determining how much the variation of the input can influence the output of a system. It has been applied to many areas such as statistics and mathematical programming. In the latter domain, it is often referred to as perturbation analysis (see Bonnans and Shapiro, 1996, for a survey). The motivation for such an analysis is to design robust systems that will not be affected by noise corrupting the inputs.
 > 
@@ -33,9 +33,17 @@ $$
 \mathbb{E}_S[ R(A, S^{\backslash i}) - R_{loo}(A,S)] &= 0
 \end{aligned},
 $$
-where $S^{i}$ means replacing the $i$-th term with a new sample $z_i'$. What's interesting is that the difference ends up just being deletion vs replacement. The first line is mostly just a reparameterisation trick.
+where $S^{i}$ means replacing the $i$-th term with a new sample $z_i'$. The difference ends up just being deletion vs replacement. The first line is mostly just a reparameterisation trick. You can also show (using triangle-inequality) that stability wrt deletion is a stronger condition than replacement, since it implies it).
 
-You can also show (using triangle-inequality) that stability wrt deletion is a stronger condition than replacement, since it implies it).
+>  As seen in previous sections, our approach allowed to derive bounds on the generalization error from the empirical and leave-one-out errors which depend on the stability of the algorithm. However, we noticed that the bounds we obtain for the two estimators are very similar. This readily implies that the method is suited to the study of algorithms for which the empirical error is close to the leave-one-out error. There is thus no hope to get good bounds for algorithms which simply minimize the empirical error since their empirical error will be very much optimistically biased compared to their leave-one-out error.
+> 
+> This means that, in order to be stable in the sense defined above, a learning algorithm has to significantly depart from an empirical risk minimizer. It thus has to accept a significant number of training errors (which should however not be larger that the noise level). In order to generalize, these extra training errors will thus be compensated by a decrease of the complexity of the learned function.
+
+They note that algorithms that satisfy stability end up having similar empirical and leave-one-out errors (which can be seen from the above lemma, and they show it formally with proper bounds). However, this runs counter to the intuition that algorithms minizing empirical error have a bias, whereas leave-one-out doesn't. Thus, the conclusion is that in order to have stability, you have to use regularized algorithms.
+
+[@pmlr-v48-hardt16]
+
+
 
 [Understanding Deep Learning (Still) Requires Rethinking Generalization](https://dl.acm.org/doi/pdf/10.1145/3446776)
 
