@@ -13,11 +13,11 @@ Leave-one-out error is the classic estimator, though they're all *approximations
 $$
 R_{loo}(A,S) = \frac{1}{m} \sum_{i=1}^{m} l(A_{S^{\backslash i}}, z_i)
 $$
-The idea is then to relate/control the term:
+The key idea is to define stability in terms of various kinds of bounds on the following:
 $$
 \mathbb{E}_z [ l(A_S, z)] - \mathbb{E}_z [ l(A_{S^{\backslash i}}, z)]
 $$
-This kind of makes sense: the idea is, how does the error (with respect to a loss function, mind you, which may feel a little weird) change when you remove one datapoint in the training data.
+In words, how does the error (with respect to a loss function, mind you, which may feel a little weird) change when you remove one datapoint in the training data. Then, one can prove that for algorithms that satisfy the stability bounds above, the empirical risk (or leave-one-out risk) is close to the true risk.
 
 Additionally, there's always a distribution, and we are drawing iid from that distribution.
 
