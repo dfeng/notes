@@ -21,6 +21,23 @@ In words, how does the error (with respect to a loss function, mind you, which m
 
 Additionally, there's always a distribution, and we are drawing iid from that distribution.
 
+<Note>
+My general feeling is that these results rely heavily on the iid aspect of the samples – meaning, for instance, that the leave-one-out risk is roughly the same thing as the empirical risk (calculated on the smaller dataset). However, this means all the analysis bypasses the actual interesting thing, which is the gap between the empirical risk and loo risk.
+</Note>
+
+A nice lemma:
+
+$$
+\begin{align*}
+\mathbb{E}_S [ R(A,S) - R_{emp}(A,S)] &= \mathbb{E}_{S,z_i'}[l(A_S, z_i') - l(A_{S^i},z_i')] \\
+\mathbb{E}_S [ R(A,S) - R_{loo}(A,S)] &= \mathbb{E}_{S,z}[l(A_S, z) - l(A_{S^{\backslash i}},z)] \\
+\mathbb{E}_S[ R(A, S^{\backslash i}) - R_{loo}(A,S)] &= 0
+\end{align*},
+$$
+where $S^{i}$ means replacing the $i$-th term with a new sample. What's interesting is that the difference ends up just being deletion vs replacement.
+
+You can also show (using triangle-inequality) that stability wrt deletion is a stronger condition than replacement, since it implies it).
+
 [Understanding Deep Learning (Still) Requires Rethinking Generalization](https://dl.acm.org/doi/pdf/10.1145/3446776)
 
 > As we point out in this work, uniform stability of a learning algorithm is independent of the labeling of the training data. Hence, the concept is not strong enough to distinguish between the models trained on the true labels (small generalization error) and models trained on the random labels (large generalization error).
