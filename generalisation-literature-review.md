@@ -1,4 +1,3 @@
-
 # Generalisation Literature Review
 
 [@bousquet2002stability] : this seminal paper introduces the notion of *uniform stability*.
