@@ -27,13 +27,13 @@ My general feeling is that these results rely heavily on the iid aspect of the s
 
 A nice lemma on the bias of these terms compared to the true risk:
 $$
-\begin{align*}
+\begin{aligned}
 \mathbb{E}_S [ R(A,S) - R_{emp}(A,S)] &= \mathbb{E}_{S,z_i'}[l(A_S, z_i') - l(A_{S^i},z_i')] \\
 \mathbb{E}_S [ R(A,S) - R_{loo}(A,S)] &= \mathbb{E}_{S,z}[l(A_S, z) - l(A_{S^{\backslash i}},z)] \\
 \mathbb{E}_S[ R(A, S^{\backslash i}) - R_{loo}(A,S)] &= 0
-\end{align*},
+\end{aligned},
 $$
-where $S^{i}$ means replacing the $i$-th term with a new sample $z_i'$. What's interesting is that the difference ends up just being deletion vs replacement. Well actually, if you look 
+where $S^{i}$ means replacing the $i$-th term with a new sample $z_i'$. What's interesting is that the difference ends up just being deletion vs replacement. The first line is mostly just a reparameterisation trick.
 
 You can also show (using triangle-inequality) that stability wrt deletion is a stronger condition than replacement, since it implies it).
 
