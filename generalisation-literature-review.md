@@ -1,5 +1,5 @@
-# Generalisation Literature Review
 
+# Generalisation Literature Review
 
 [@bousquet2002stability] : this seminal paper introduces the notion of *uniform stability*.
 
@@ -41,11 +41,12 @@ where $S^{i}$ means replacing the $i$-th term with a new sample $z_i'$. The diff
 
 They note that algorithms that satisfy stability end up having similar empirical and leave-one-out errors (which can be seen from the above lemma, and they show it formally with proper bounds). However, this runs counter to the intuition that algorithms minizing empirical error have a bias, whereas leave-one-out doesn't. Thus, the conclusion is that in order to have stability, you have to use regularized algorithms.
 
-[@pmlr-v48-hardt16]
-
-
-
-[Understanding Deep Learning (Still) Requires Rethinking Generalization](https://dl.acm.org/doi/pdf/10.1145/3446776)
+[@Zhang:2016ve] 
 
 > As we point out in this work, uniform stability of a learning algorithm is independent of the labeling of the training data. Hence, the concept is not strong enough to distinguish between the models trained on the true labels (small generalization error) and models trained on the random labels (large generalization error).
 
+A key point is that, all the above work on stability is clearly not the right concept, since it doesn't apply to the nice random label experiment here.
+
+[@pmlr-v48-hardt16] : Unfortunately, this work here, which shows that SGD is algorithmically stable, also uses the same concept, so also can't explain generalisability.
+
+[@kawaguchi2017generalization] :
