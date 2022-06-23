@@ -25,8 +25,7 @@ Additionally, there's always a distribution, and we are drawing iid from that di
 My general feeling is that these results rely heavily on the iid aspect of the samples – meaning, for instance, that the leave-one-out risk is roughly the same thing as the empirical risk (calculated on the smaller dataset). However, this means all the analysis bypasses the actual interesting thing, which is the gap between the empirical risk and loo risk.
 </Note>
 
-A nice lemma:
-
+A nice lemma on the bias of these terms compared to the true risk:
 $$
 \begin{align*}
 \mathbb{E}_S [ R(A,S) - R_{emp}(A,S)] &= \mathbb{E}_{S,z_i'}[l(A_S, z_i') - l(A_{S^i},z_i')] \\
@@ -34,7 +33,7 @@ $$
 \mathbb{E}_S[ R(A, S^{\backslash i}) - R_{loo}(A,S)] &= 0
 \end{align*},
 $$
-where $S^{i}$ means replacing the $i$-th term with a new sample. What's interesting is that the difference ends up just being deletion vs replacement.
+where $S^{i}$ means replacing the $i$-th term with a new sample $z_i'$. What's interesting is that the difference ends up just being deletion vs replacement. Well actually, if you look 
 
 You can also show (using triangle-inequality) that stability wrt deletion is a stronger condition than replacement, since it implies it).
 
