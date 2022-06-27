@@ -48,4 +48,10 @@ A key point is that, all the above work on stability is clearly not the right co
 
 [@pmlr-v48-hardt16] : Unfortunately, this work here, which shows that SGD is algorithmically stable, also uses the same concept, so also can't explain generalisability.
 
+Goal: show that SGD satisfies uniform stability, which therefore means small generalization error.
+
+The general technique is to assume a smooth and $L$-Lipschitz loss function (w.r.t. the model $w$, not the "inputs"), which then lets you control (upper bound) the generalization error of a single point by the difference between two models $w, w'$ (and if you look at iterates, $w_t, w_{t+1}$, the difference is just the gradient step).
+
+The proof technique (for the general non-convex problem) is roughly to show that the number of steps required before you encounter the data point that has been replace (recall that stability involves replacing an element) is pretty large – and at that point, the step size has decayed sufficiently for you control the eventual divergence between the two training schemes.
+
 [@kawaguchi2017generalization] :
