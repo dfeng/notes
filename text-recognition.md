@@ -8,6 +8,6 @@ One might be tempted to create something that handles all possible situations.^[
 
 So I think for the purposes of our current implementation, we can safely assume that we will be reading rendered text on screenshots, the kind that is usually found in applications.
 
-## Language Model
+## (Implicit) Language Model
 
-It's an interesting question (and one that has a huge impact on model design), whether or not we want to have a language model
+Currently, we're doing character level predictions, and our receptive field is roughly enough to probably see one character each side usually (depending on the font size!). On the other hand, most models 
