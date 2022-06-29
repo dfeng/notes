@@ -12,4 +12,15 @@ So I think for the purposes of our current implementation, we can safely assume 
 
 Currently, we're doing character level predictions, and our receptive field is roughly enough to probably see one character each side usually (depending on the font size!). On the other hand, most SOTA models now use some kind of decoder/sequence model (e.g. LSTM), allowing for longer-range dependence and hence (character-level) "language models".
 
-For me, the language model should be used as a last resort
+It's an interesting question, whether or not having a language model would be better for us. At the end of the day, it boils down to evaluating the kinds of errors our models are making and would be better solved with a language model, and counterbalancing that against the kinds of biases that might be introduced, especially when dealing with serial numbers that have more arbitrary character sequences.
+
+The way I would interpret our dataset distribution is as follows:
+
+1. In terms of actual GUIs, most of it is reasonable, English,^[Though actually we should probably start thinking about other languages.] text.
+2. The trickier stuff are the free-form input textboxes, as well as other random sequences of characters that represent things like IDs.
+
+Most of the text will be the application text (which would most likely be used for either navigating, via buttons or menus, or used indirectly as anchors). We should be getting those right, but one could argue that getting those things wrong might matter a little less, because we're not "reading" from them, and so it's much more difficult to have **silent failures**. On the other hand, the more random string of characters (or let's stay string of numbers, where a language model would be slightly undesirable) might not be as common in terms of what text is seen on the actual screen, but it is definitely more likely to be chosen and interacted with.
+
+<Note>
+Key point: there's an important distinction between what text will be seen on a screen, and what text will need to be interacted with; even if most text on a screen are application text (like field labels), many if not most of those texts won't actually be read.
+</Note>
