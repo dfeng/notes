@@ -15,9 +15,11 @@ So I think for the purposes of our current implementation, we can safely assume 
 ### To Column or not to Column
 
 One of the nice things about rendered text on a screen is that you get some structure for free:
- - you can essentially assume that your text is exactly horizontal (there's no incline)
- - if you ignore things like italics, you can assume that characters occupy some set of columns.^[Actually, this makes me think that somewhere the model should definitely be able to use the fact that characters are of a certain consistent range of relative width (though capital letters might throw things off).]
- - 
+ - you can essentially assume that your text is exactly horizontal (there's no incline, or other weird orientations to have to worry about).
+ - if you ignore things like italics, you can assume that characters occupy some contiguous set of columns, enabling you to make column-level predictions.^[Actually, this makes me think that somewhere the model should definitely be able to use the fact that characters are of a certain consistent range of relative width (though capital letters might throw things off).]
+At the same time, you can probably break down more sophisticated models into a "pre-processing" step that turns weirdly oriented sequences of characters into some baseline horizontal orientation, maybe even normalized by size. Once you've done that, then we're basically on starting from the same position.
+
+I think it would also be useful to think more broadly in terms of languages, 
 
 ## (Implicit) Language Model
 
