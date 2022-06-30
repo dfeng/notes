@@ -1,5 +1,7 @@
 # Text Recognition
 
+## Differentiation
+
 How we differentiate ourselves from existing services?
 
 Currently, we are relying on the fact that we are dealing with GUIs, so we essentially have pixel-perfect font renderings. You can think of things as a spectrum: on the left we have our setting; in the middle we have things like scanned documents, where text is fairly uniform, though there are artefacts and noise introduced by the scanning procedure and others; finally you have the general problem of recognising text in the "wild" (e.g. street signage from photographs).
@@ -23,4 +25,8 @@ Most of the text will be the application text (which would most likely be used f
 
 <Note>
 Key point: there's an important distinction between what text will be seen on a screen, and what text will need to be interacted with; even if most text on a screen are application text (like field labels), many if not most of those texts won't actually be read.
-</Note>
+</Note>Easy to forget this.
+
+
+
+As an interesting aside, when we trained
