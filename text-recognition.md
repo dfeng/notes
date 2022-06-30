@@ -10,6 +10,15 @@ One might be tempted to create something that handles all possible situations.^[
 
 So I think for the purposes of our current implementation, we can safely assume that we will be reading rendered text on screenshots, the kind that is usually found in applications.
 
+## Model Specifics
+
+### To Column or not to Column
+
+One of the nice things about rendered text on a screen is that you get some structure for free:
+ - you can essentially assume that your text is exactly horizontal (there's no incline)
+ - if you ignore things like italics, you can assume that characters occupy some set of columns.^[Actually, this makes me think that somewhere the model should definitely be able to use the fact that characters are of a certain consistent range of relative width (though capital letters might throw things off).]
+ - 
+
 ## (Implicit) Language Model
 
 Currently, we're doing character level predictions, and our receptive field is roughly enough to probably see one character each side usually (depending on the font size!). On the other hand, most SOTA models now use some kind of decoder/sequence model (e.g. LSTM), allowing for longer-range dependence and hence (character-level) "language models".
