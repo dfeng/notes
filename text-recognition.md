@@ -47,3 +47,4 @@ As an interesting aside, when we trained
  - Lower/Upper case predictor (separate head)
  - Character+Bounds -> sequence (similar to what Anindya had in mind before)
  - Hand-crafted "neural network" features might not be that good
+ - We can think about bounds as a detection model
