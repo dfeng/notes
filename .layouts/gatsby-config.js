@@ -37,7 +37,14 @@ module.exports = {
         {
           resolve: "gatsby-remark-mermaid",
           options: {
-            viewport: {width: 600, height: 300}
+            viewport: {width: 600, height: 300},
+            theme: "neutral",
+            mermaidOptions: {
+              themeVariables: {
+                lineColor: "#888"
+              },
+              themeCSS: ".arrowheadPath {fill: #888 !important;}"
+            }
           }
         }],
         // nav: [
