@@ -33,6 +33,7 @@ module.exports = {
           [require("@supremum/remark-bibtex"), { bibtexFile: "../bib.bib"}]
         ],
         rehypePlugins: [require("rehype-katex")],
+        gatsbyRemarkPlugins: [require("gatsby-remark-mermaid")],
         // nav: [
         //   {
         //     title: "Github",
