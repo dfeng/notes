@@ -49,7 +49,16 @@ The learnings from recent advances in SOTA ML is that seemingly difficult proble
 
 ### Upper/Lower Case
 
-There are fonts out there where lower and upper-case only differ by size.
+There are fonts out there where lower and upper-case only differ by size/scale (technically if we knew line-height then we could differentiate, but we rarely do). Interestingly, this means we should be:
+ - globally scale-invariant (font-size invariant)
+ - locally scale-sensitive (upper/lower-case)
+Actually, we (and most recognition techniques) solve the first by normalizing the size of the input. Thus, in terms of the *recognition* part, we don't need any scale-invariance (the *detection* part should still have invariance since scaling doesn't solve the problem there).
+
+### Character Classes
+
+Inspired (somewhat) by the way FasterRCNN works (first predict *objectness*, then predict the class), I think it makes sense to inject some additional inductive bias into the character classes themselves.
+
+Firstly, we should distinguish between the three broad categories of characters: alphabet, numeric, symbols. The main reason for this is because the signature of their presence in a "word" gives lots of information about what kind of "word" we're looking at.
 
 ## Random Ideas
 
