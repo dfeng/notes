@@ -60,6 +60,10 @@ Inspired (somewhat) by the way FasterRCNN works (first predict *objectness*, the
 
 Firstly, we should distinguish between the three broad categories of characters: alphabet, numeric, symbols. The main reason for this is because the signature of their presence in a "word" gives lots of information about what kind of "word" we're looking at.
 
+### Ambiguous Cases
+
+I'm now thinking that we should go one step further in "feature engineering", and actually handle confusing/ambiguous characters separately. One way to do this would be to have, in addition to the three broad categories (char, num, sym), we also have the ambiguous group (note that ambiguous characters are almost always across groups (uppercase O and zero; and this doesn't include the upper/lower case confusion).
+
 ## Random Ideas
 
  - Lower/Upper case predictor (separate head)
