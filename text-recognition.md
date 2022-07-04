@@ -64,6 +64,22 @@ Firstly, we should distinguish between the three broad categories of characters:
 
 I'm now thinking that we should go one step further in "feature engineering", and actually handle confusing/ambiguous characters separately. One way to do this would be to have, in addition to the three broad categories (char, num, sym), we also have the ambiguous group (note that ambiguous characters are almost always across groups (uppercase O and zero; and this doesn't include the upper/lower case confusion).
 
+```mermaid
+graph TD
+char --> c1[A,a] & c2[B,b] & c3((...))
+c1 --> A & a
+num --> 2 & 3 & n((...))
+sym --> s1[";,:"] & s2["}"] & s3((...))
+s1 --> ss1[";"] & ss2[":"]
+```
+
+```mermaid
+graph TD
+amb --> a1[L,l,1,!] & a2[o,O,0] & a3((...))
+a1 --> L & l & 1 & !
+a2 --> o & O & 0
+```
+
 ## Random Ideas
 
  - Lower/Upper case predictor (separate head)
