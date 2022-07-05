@@ -38,11 +38,6 @@ Most of the text will be the application text (which would most likely be used f
 Key point: there's an important distinction between what text will be seen on a screen, and what text will need to be interacted with; even if most text on a screen are application text (like field labels), many if not most of those texts won't actually be read. Easy to forget this.
 </Note>
 
-
-## Transformers (Huggingface)
-
-TODO
-
 ## First Principles Thinking
 
 The learnings from recent advances in SOTA ML is that seemingly difficult problems (say really long time horizons in RL) don't actually need a completely new architecture (say hierarchical RL).^[A quote from https://openai.com/blog/openai-five/.] This might be okay in the data-rich regimes that many applications exist in, but not really in our case (unless we drastically change our perspective). In some simple sense, there's no free lunch: you either get your learnings from your data, or you get your learnings from your human overlords that inject some inductive biases. I think in the case of text recognition, and our particular dataset, we should spend more time doing these "hand-crafted" things, simply because we don't have the data.
@@ -64,7 +59,7 @@ Firstly, we should distinguish between the three broad categories of characters:
 
 ### Ambiguous Cases
 
-I'm now thinking that we should go one step further in "feature engineering", and actually handle confusing/ambiguous characters separately. One way to do this would be to have, in addition to the three broad categories (char, num, sym), we also have the ambiguous group (note that ambiguous characters are almost always across groups (uppercase O and zero; and this doesn't include the upper/lower case confusion).
+I'm now thinking that we should go one step further in "feature engineering", and actually handle confusing/ambiguous characters separately. One way to do this would be to have, in addition to the three broad categories (char, num, sym), we also have the ambiguous group (note that ambiguous characters are almost always across groups (`O` and `0`; and this doesn't include the upper/lower case confusion).
 
 ```mermaid
 graph TD
@@ -82,9 +77,16 @@ a1 --> L & l & 1 & !
 a2 --> o & O & 0
 ```
 
+One problem with this method is that it forces the model to put things like `L` and `l` together, when they only should be together for certain fonts (or `A` and `a`).
+
+In an ideal world, we would make the model learn these kinds of groupings. That being said, an *embedding* approach feels a little like this. For instance, the idea would be that `A` and `a` have close embeddings. However, I go back to the fact that we just don't have that much data – so it probably pays to try to inject these biases manually.
+
+## Transformers (Huggingface)
+
+TODO
+
 ## Random Ideas
 
  - Lower/Upper case predictor (separate head)
  - Character+Bounds -> sequence (similar to what Anindya had in mind before)
- - Hand-crafted "neural network" features might not be that good
  - We can think about bounds as a detection model
