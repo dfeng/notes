@@ -22,7 +22,7 @@
   "imgWidth": "img-default-width",
   "tableWidth": "table-default-width",
   "iframeWidth": "iframe-default-width",
-  "colorfulHeadings": false,
+  "colorfulHeadings": true,
   "minimalIcons": true,
   "colorfulActiveStates": false,
   "fancyCursor": false,
