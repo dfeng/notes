@@ -56,7 +56,7 @@ Actually, we (and most recognition techniques) solve the first by normalizing th
 
 ### Character Classes
 
-Inspired (somewhat) by the way FasterRCNN works (first predict *objectness*, then predict the class), I think it might make sense to inject some additional inductive bias into the character classes themselves.
+Inspired (somewhat) by the way FasterRCNN works (first predict *objectness*, then predict the class), I think it might make sense to inject some additional inductive bias into the character classes themselves.ff
 
 Firstly, we should distinguish between the three broad categories of characters: alphabet, numeric, symbols. The main reason for this is because the signature of their presence in a "word" gives lots of information about what kind of "word" we're looking at.
 
