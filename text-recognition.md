@@ -47,7 +47,7 @@ In some simple sense, there's no free lunch in machine learning: you either get 
 
 ### Upper/Lower Case
 
-There are fonts out there where lower and upper-case only differ by size/scale (technically if we knew line-height then we could differentiate, but we rarely do). Interestingly, this means we should be:
+There are fonts/characters out there where lower and upper-case only differ by size/scale (technically if we knew line-height then we could differentiate, but we rarely do). Interestingly, this means we should be:
 
  - globally scale-invariant (font-size invariant)
  - locally scale-sensitive (upper/lower-case)
@@ -56,13 +56,23 @@ Actually, we (and most recognition techniques) solve the first by normalizing th
 
 Let's actually go through a few examples:
 
- - v vs V
-	 - 
+ - v,V | s,S
+	 - these are essentially the same shape, perhaps warped a little different. just seeing this character in isolation, the model should not be able to distinguish between the cases.
  - b vs B
-	 - 
+	- they both lie on full width (though perhaps the lower-case doesn't go that far up), but their shape is different
+- a vs A
+	- the lower-case lies in the bottom, making it in theory even easier to distinguish
 
  - abcdefghijklmnopqrstuvwxyz
- - ABCDEFGHIJKLMNOPQRSTUVWXYZ
+	 - one can break lower-case down into "short" and "full"
+		 - acemnorsuvwxz
+		 - bdfghijklpqty
+			 - bdfhiklt
+			 - gpqy
+			 - j
+	 - also note that the existence of the hanging characters also changes the relative position, but since we have translation invariance from the CNNs, that's not too big of a worry.
+
+
 
 ### Character Classes
 
