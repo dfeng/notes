@@ -31,15 +31,19 @@ The way I would interpret our dataset distribution is as follows:
 2. Then we have things like person or company names, dates, numbers. These usually are input fields (and so in theory one could either have that be part of the input, or learned from the form label).
 3. Finally, we have things like ids, serial numbers that might contain a mix of numbers and characters; free-form inputs (like comments), where there might be punctuation/symbols.
 
-Most of the text will be the application text (which would most likely be used for either navigating, via buttons or menus, or used indirectly as anchors). We should be getting those right, but one could argue that getting those things wrong might matter a little less, because we're not "reading" from them, and so it's much more difficult to have **silent failures**. On the other hand, the more random string of characters (or let's stay string of numbers, where a language model would be slightly undesirable) might not be as common in terms of what text is seen on the actual screen, but it is definitely more likely to be chosen and interacted with.
+Most of the text will be the application text (which would most likely be used for either navigating, via buttons or menus, or used indirectly as anchors). We should be getting those right, but one could argue that getting those things wrong might matter a little less, because we're not "reading" from them, and so it's much more difficult to have **silent failures**. On the other hand, the other categories might not be as common in terms of what text is seen on the actual screen, but it is definitely more likely to be chosen and interacted with.
 
-<Note>
 Key point: there's an important distinction between what text will be seen on a screen, and what text will need to be interacted with; even if most text on a screen are application text (like field labels), many if not most of those texts won't actually be read. Easy to forget this.
-</Note>
+
+Update: having had a look a little closer at our "dataset", I'm finding it hard to find instances where you might have actually random characters (like you get in random password generators, and what we generate in our synthetic data).
 
 ## First Principles Thinking
 
-The learnings from recent advances in SOTA ML is that seemingly difficult problems (say really long time horizons in RL) don't actually need a completely new architecture (say hierarchical RL).^[A quote from https://openai.com/blog/openai-five/.] This might be okay in the data-rich regimes that many applications exist in, but not really in our case (unless we drastically change our perspective). In some simple sense, there's no free lunch: you either get your learnings from your data, or you get your learnings from your human overlords that inject some inductive biases. I think in the case of text recognition, and our particular dataset, we should spend more time doing these "hand-crafted" things, simply because we don't have the data.
+The learnings from recent advances in SOTA ML is that seemingly difficult problems (say really long time horizons in RL) don't actually need a completely new architecture (say hierarchical RL).^[A quote from https://openai.com/blog/openai-five/.] Data/feature/model engineering is not as effective as giving your model more capacity, to figure out things for itself.
+
+That being said, we're not in the same regime as these kinds of open-ended problems. We are dealing with a very *constrained* problem, and we already know the pitfalls/difficulties that befall our models. At the same time, because it is so constrained, it feels more plausible that injecting some architectural biases will be helpful.
+
+In some simple sense, there's no free lunch in machine learning: you either get your learnings from your data, or you get your learnings from your human overlords that inject some inductive biases. And if you don't have infinite *real* data, but synthetic data, then you're just getting your learnings from how you generated your synethic data.
 
 ### Upper/Lower Case
 
@@ -49,6 +53,16 @@ There are fonts out there where lower and upper-case only differ by size/scale (
  - locally scale-sensitive (upper/lower-case)
 
 Actually, we (and most recognition techniques) solve the first by normalizing the size of the input. Thus, in terms of the *recognition* part, we don't need any scale-invariance (the *detection* part should still have invariance since scaling doesn't solve the problem there).
+
+Let's actually go through a few examples:
+
+ - v vs V
+	 - 
+ - b vs B
+	 - 
+
+ - abcdefghijklmnopqrstuvwxyz
+ - ABCDEFGHIJKLMNOPQRSTUVWXYZ
 
 ### Character Classes
 
