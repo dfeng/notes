@@ -10,8 +10,6 @@ One might be tempted to create something that handles all possible situations.^[
 
 So I think for the purposes of our current implementation, we can safely assume that we will be reading rendered text on screenshots, the kind that is usually found in applications.
 
-## Model Specifics
-
 ### To Column or not to Column
 
 One of the nice things about rendered text on a screen is that you get some structure for free:
@@ -19,11 +17,15 @@ One of the nice things about rendered text on a screen is that you get some stru
  - if you ignore things like italics, you can assume that characters occupy some contiguous set of columns, enabling you to make column-level predictions.^[Actually, this makes me think that somewhere the model should definitely be able to use the fact that characters are of a certain consistent range of relative width (though capital letters might throw things off).]
 At the same time, you can probably break down more sophisticated models into a "pre-processing" step that turns weirdly oriented sequences of characters into some baseline horizontal orientation, maybe even normalized by size. Once you've done that, then we're basically on starting from the same position.
 
-I think it would also be useful to think more broadly in terms of languages. For instance, there are right-to-left languages (which doesn't really matter, except that your language model is now reversed); and then you have things like chinese with their characters (this may be out of scope for now, given the explosion in the number of "character" classes).
+Aside: I think it would also be useful to think more broadly in terms of languages. For instance, there are right-to-left languages (which doesn't really matter, except that your language model is now reversed); and then you have things like chinese with their characters (this may be out of scope for now, given the explosion in the number of "character" classes).
+
+So, to summarise, our data regime is *rendered text*
+
+## Model Specifics
 
 ### (Implicit) Language Model
 
-Currently, we're doing character level predictions, and our receptive field is roughly enough to probably see one character each side usually (depending on the font size!). On the other hand, most SOTA models now use some kind of decoder/sequence model (e.g. LSTM), allowing for longer-range dependence and hence (character-level) "language models".
+Currently, we're doing character level predictions, and our receptive field is roughly enough to probably see one character each side usually. On the other hand, most SOTA models now use some kind of decoder/sequence model (e.g. LSTM), allowing for longer-range dependence and hence (character-level) "language models".
 
 It's an interesting question, whether or not having a language model would be better for us. At the end of the day, it boils down to evaluating the kinds of errors our models are making and would be better solved with a language model, and counterbalancing that against the kinds of biases that might be introduced, especially when dealing with serial numbers that have more arbitrary character sequences.
 
