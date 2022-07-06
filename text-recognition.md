@@ -1,6 +1,6 @@
 # Text Recognition
 
-## Differentiation
+## Differentiation / Data
 
 How we differentiate ourselves from existing services?
 
@@ -19,10 +19,6 @@ At the same time, you can probably break down more sophisticated models into a "
 
 Aside: I think it would also be useful to think more broadly in terms of languages. For instance, there are right-to-left languages (which doesn't really matter, except that your language model is now reversed); and then you have things like chinese with their characters (this may be out of scope for now, given the explosion in the number of "character" classes).
 
-So, to summarise, our data regime is *rendered text*
-
-## Model Specifics
-
 ### (Implicit) Language Model
 
 Currently, we're doing character level predictions, and our receptive field is roughly enough to probably see one character each side usually. On the other hand, most SOTA models now use some kind of decoder/sequence model (e.g. LSTM), allowing for longer-range dependence and hence (character-level) "language models".
@@ -31,8 +27,9 @@ It's an interesting question, whether or not having a language model would be be
 
 The way I would interpret our dataset distribution is as follows:
 
-1. In terms of actual GUIs, most of it is reasonable, English,^[Though actually we should probably start thinking about other languages.] text.
-2. The trickier stuff are the free-form input textboxes, as well as other random sequences of characters that represent things like IDs.
+1. We have the actual GUI text which are English words (i.e. dictionary words).^[Though actually we should probably start thinking about other languages.]
+2. Then we have things like person or company names, dates, numbers. These usually are input fields (and so in theory one could either have that be part of the input, or learned from the form label).
+3. Finally, we have things like ids, serial numbers that might contain a mix of numbers and characters; free-form inputs (like comments), where there might be punctuation/symbols.
 
 Most of the text will be the application text (which would most likely be used for either navigating, via buttons or menus, or used indirectly as anchors). We should be getting those right, but one could argue that getting those things wrong might matter a little less, because we're not "reading" from them, and so it's much more difficult to have **silent failures**. On the other hand, the more random string of characters (or let's stay string of numbers, where a language model would be slightly undesirable) might not be as common in terms of what text is seen on the actual screen, but it is definitely more likely to be chosen and interacted with.
 
