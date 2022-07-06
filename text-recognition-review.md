@@ -15,4 +15,8 @@
  - Text Recognition:
 	 - Early methods include histogram of oriented gradients descriptors, connected components, stroke width transform.
  - End-to-end systems:
-	 - 
+
+
+## AE TextSpotter
+
+![Architecture of AE TextSpotter](img/textspotter.png)
