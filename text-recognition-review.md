@@ -20,3 +20,4 @@
 ## AE TextSpotter
 
 ![Architecture of AE TextSpotter](img/textspotter.png)
+
