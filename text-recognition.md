@@ -115,3 +115,5 @@ TODO
  - Lower/Upper case predictor (separate head)
  - Character+Bounds -> sequence (similar to what Anindya had in mind before)
  - We can think about bounds as a detection model
+ - Non-text examples
+	 - icon crops (return nothing)
