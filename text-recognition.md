@@ -64,7 +64,7 @@ Let's actually go through a few examples:
 	- the lower-case lies in the bottom, making it in theory even easier to distinguish
 
  - abcdefghijklmnopqrstuvwxyz
-	 - one can break lower-case down into "short" and "full"
+	 - one can break lower-case down further
 		 - acemnorsuvwxz
 		 - bdfghijklpqty
 			 - bdfhiklt
@@ -72,7 +72,9 @@ Let's actually go through a few examples:
 			 - j
 	 - also note that the existence of the hanging characters also changes the relative position, but since we have translation invariance from the CNNs, that's not too big of a worry.
 
+Actually, I guess it rarely makes sense to have too much context. You could argue that for something like distinguishing between S and s, if you see other lower-case stuff, then you know that you have S (i.e. it's a little sparser at the top line).
 
+ - [ ] synthetic data should include every single character from many different types of fonts?
 
 ### Character Classes
 

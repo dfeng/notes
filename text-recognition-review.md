@@ -21,3 +21,11 @@
 
 ![Architecture of AE TextSpotter](img/textspotter.png)
 
+TDM: outputs are *text-line* bounding boxes and visual scores. There's a detection head and a mask head.
+CRM: output are bounding boxes and character classes.
+
+Then, there's a matching algorithm that matches characters to lines, so you can produce the text content of a line.
+
+LM: they use the language model only as a filtering step (on top of a NMS that happens after the "score" is produced). That is, once you have the candidate text contents (e), the LM will give a score, which you combine with the "visual score". They also train the LM separately from the rest of the model (not sure why) as a two-stage model.
+
+Thus, it's main purpose is to handle two rather estoric problems: chinese characters being either vertical or horizontal; and large spacing of characters causing the "words" to be split up. Perhaps this last problem might be useful for us when we have ambiguous spacing, but that error doesn't appear to be particularly damning for us right now.
