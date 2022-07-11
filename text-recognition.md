@@ -54,10 +54,10 @@ There are fonts/characters out there where lower and upper-case only differ by s
 
 Actually, we (and most recognition techniques) solve the first by normalizing the size of the input. Thus, in terms of the *recognition* part, we don't need any scale-invariance (the *detection* part should still have invariance since scaling doesn't solve the problem there).
 
-Let's actually go through a few examples:
+Let's actually go through a few examples (keeping in mind that fonts have different variations):
 
- - v,V | s,S
-	 - these are essentially the same shape, perhaps warped a little different. just seeing this character in isolation, the model should not be able to distinguish between the cases.
+ - v,V | s,S | c,C
+	 - these are essentially the same shape, perhaps warped a little different. just seeing this character in isolation, the model should not be able to distinguish between the cases. and in theory, if you only had these two letters, you couldn't distinguish between sv and SV. but this is so minor as to not actually matter.
  - b vs B
 	- they both lie on full width (though perhaps the lower-case doesn't go that far up), but their shape is different
 - a vs A
@@ -72,9 +72,13 @@ Let's actually go through a few examples:
 			 - j
 	 - also note that the existence of the hanging characters also changes the relative position, but since we have translation invariance from the CNNs, that's not too big of a worry.
 
-Actually, I guess it rarely makes sense to have too much context. You could argue that for something like distinguishing between S and s, if you see other lower-case stuff, then you know that you have S (i.e. it's a little sparser at the top line).
+So, there's really only a few instances where context really matter, and it really only matters insofar as figuring out whether or not something is capital.
 
  - [ ] synthetic data should include every single character from many different types of fonts?
+
+### Fonts
+
+If all fonts were the same, life would be easy. For our particular problem, one of the key difficulties is the fact that fonts are all different (though they obviously share commonalities).
 
 ### Character Classes
 
