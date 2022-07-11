@@ -78,7 +78,7 @@ So, there's really only a few instances where context really matter, and it real
 
 ### Fonts
 
-If all fonts were the same, life would be easy. For our particular problem, one of the key difficulties is the fact that fonts are all different (though they obviously share commonalities).
+If all fonts were the same, life would be easy. For our particular problem, one of the key difficulties is the fact that fonts are all different (though they obviously share commonalities). The good thing is that we'll most likely be dealing with pretty standard fonts (i.e. no comic sans) – however, there's always going to be different flavors of fonts (monospace), and we can't guarantee that we'll have a particular font in our synthetic/training dataset.
 
 ### Character Classes
 
@@ -86,31 +86,15 @@ Inspired (somewhat) by the way FasterRCNN works (first predict *objectness*, the
 
 Firstly, we should distinguish between the three broad categories of characters: alphabet, numeric, symbols. The main reason for this is because the signature of their presence in a "word" gives lots of information about what kind of "word" we're looking at. For instance, if you have numbers interspersed with characters, then most likely you're dealing with a symbol, in which case you should assume all characters are independent. On the other hand, if you have a bunch of characters, then we might want to assume things like capitals really only happen at the beginning of words.
 
-### Ambiguous Cases
+This gets to the second part of the model, which is the sequence inference. Originally I thought about having the model learn the "class" first, then learn symbols in that class. But actually, the class distinction is mainly a human categorisation, and is really only useful for the sequence inference step. That is to say, there really should just be these two separate steps: the character inference, and then the sequence inference.
 
-I'm now thinking that we should go one step further in "feature engineering", and actually handle confusing/ambiguous characters separately. One way to do this would be to have, in addition to the three broad categories (char, num, sym), we also have the ambiguous group (note that ambiguous characters are almost always across groups (`O` and `0`; and this doesn't include the upper/lower case confusion).
+For instance, we also have the between-class ambiguity of things like `o` and `0`. You might be able to learn that particular fonts have particular styles of zero (that is, within a font, they usually distinguish between these confusing characters).
 
-```mermaid
-graph TD
-char --> c1[A,a] & c2[B,b] & c3((...))
-c1 --> A & a
-num --> 2 & 3 & n((...))
-sym --> s1[";,:"] & s2["}"] & s3((...))
-s1 --> ss1[";"] & ss2[":"]
-```
+Is it a good thing to learn font-specific traits? Or should we instead learn general principles? It seems like for generalisation purposes, we shouldn't need to rely on knowing that a particular font has a particular style of `0`, say, but perhaps this isn't necessarily a trade-off? Actually, it's probably very difficult for the model to distinguish between various fonts (and the font data would have to be a global thing), so I'm pretty sure we don't want to learn font-specific traits.
 
-```mermaid
-graph TD
-amb --> a1["L,l,1,!"] & a2[o,O,0] & a3((...))
-a1 --> L & l & 1 & !
-a2 --> o & O & 0
-```
+In that case, what we're really looking at are all these characters, and there's a pool for each character (coming from the different fonts). We probably shouldn't even think about it in terms of "fonts", but just different *instances* of a particular character.
 
-One problem with this method is that it forces the model to put things like `L` and `l` together, when they only should be together for certain fonts (or `A` and `a`).
-
-In an ideal world, we would make the model learn these kinds of groupings. That being said, an *embedding* approach feels a little like this. For instance, the idea would be that `A` and `a` have close embeddings. However, I go back to the fact that we just don't have that much data – so it probably pays to try to inject these biases manually.
-
-## Transformers (Huggingface)
+## Transformers
 
 TODO
 
