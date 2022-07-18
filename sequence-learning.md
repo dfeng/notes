@@ -24,4 +24,6 @@ Pointer networks are an interesting architecture that utilises attention to refe
 
 ## Contiguous Subsets
 
+Our problem is, given an image (which you can think of as a *sequence* of columns), output a sequence of characters.
+
 This problem feels similar to something like determining the genes in a DNA sequence
