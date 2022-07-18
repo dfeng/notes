@@ -1,5 +1,0 @@
-# Sequential Learning
-
-As a mathematician/statistician, we default to thinking about neural networks as function approximators. However, an implicit assumption in that statement is that the input and output spaces are static and well defined. As a result of this constraint, we don't really think about things like sequence-to-sequence learning, where the input and output space is variable. I'm sure there's a way to make it "theoretical", but it would most likely be a hack of some sort.
-
-However, I get the feeling that it is the flexible, adaptive nature of neural networks – their ability to solve such "atypical" input/output schemes – that make them so powerful. This lends credence to the whole Software 2.0 view of deep learning, that we should think of them as adaptive computer programs. Basically, it feels much more like Engineering than Mathematics.
