@@ -14,8 +14,14 @@ Note that sequence learning, when there's a one-to-one with input and output, is
 
 Where things get more difficult is when you have variable inputs and outputs. The trick is to have something like an encoder-decoder architecture (with the middle being the bottleneck). This allows us to collapse the variable inputs into one fixed-dimensional embedding. Then, in order to produce variable outputs, we simply let one of the possible outputs be an end-of-string token (which admittedly seems kind of crude, but works).^[Notice that this kind of only makes sense when you're dealing with categorical sequences, though I'm sure you can fenangle it to work with continuous values. Our particular use case is also categorical data.]
 
-The main problem with this approach is precisely the *bottleneck* architecture, and the way that outputs unfold over the sequence.
+The main problem with this approach is precisely the *bottleneck* architecture, and the way that outputs unfold over the sequence (i.e. the context is passed through instance by instance). The Transformer architecture is a way of sidestepping this problem, by letting context happen simultaneously in some window via self-attention. However, it ultimately adopts the same encoder-decoder style architecture.
 
-### Transformers
+It feels like actually, there's really only way solution to variable-length input/outputs (unless you have more structure, which we do).
 
-The transformer architecture tries to solve this problem of 
+### Pointer Networks
+
+Pointer networks are an interesting architecture that utilises attention to reference the input sequence, and works well for combinatorial problems like determining the convex hull of a point cloud.
+
+## Contiguous Subsets
+
+This problem feels similar to something like determining the genes in a DNA sequence
