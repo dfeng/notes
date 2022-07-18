@@ -6,8 +6,16 @@ However, I get the feeling that it is the flexible, adaptive nature of neural ne
 
 Enough preamble. Onto actual sequence learning.
 
-## Bottleneck
+## Approaches
+
+### Bottleneck
 
 Note that sequence learning, when there's a one-to-one with input and output, isn't particularly difficult. You can almost think of it is as predicting a time series. The main difficulty there is getting in past information (instead of just treating it as independent draws). That's where you can use things like RNNs. The fact that they're similar to time series means you can probably just appropriate the theory from that field.
 
 Where things get more difficult is when you have variable inputs and outputs. The trick is to have something like an encoder-decoder architecture (with the middle being the bottleneck). This allows us to collapse the variable inputs into one fixed-dimensional embedding. Then, in order to produce variable outputs, we simply let one of the possible outputs be an end-of-string token (which admittedly seems kind of crude, but works).^[Notice that this kind of only makes sense when you're dealing with categorical sequences, though I'm sure you can fenangle it to work with continuous values. Our particular use case is also categorical data.]
+
+The main problem with this approach is precisely the *bottleneck* architecture, and the way that outputs unfold over the sequence.
+
+### Transformers
+
+The transformer architecture tries to solve this problem of 
