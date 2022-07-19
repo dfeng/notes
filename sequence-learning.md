@@ -10,19 +10,19 @@ Enough preamble. Onto actual sequence learning.
 
 Let's first talk about sequences (or time series if you're from econometrics). An obvious problem is to model sequences, and be able to predict their next states. That's where RNNs come in: they use a "memory" state that enables them to better predict the next state (and are no longer Markovian).
 
-But what happens when your problem is not to predict the next state of a sequence, but take one sequence and output another sequence? If we think about the above problem, it's kind of saying, let's ingest the first sequence (the training step in modelling a single sequence), and then port things over to this new sequence, and try to predict this new sequence, seeding it with the first sequence, instead of with the previous states of the second sequence. In some crude (or is it brilliant) sense, it's a single sequence problem, except this sequence has a very special structure: it's a concatenation of two sequences.
+But what happens when your problem is not to predict the next state of a sequence, but take one sequence and output another sequence? If we think about the above problem, it's kind of saying, let's ingest the first sequence (the training step in modelling a single sequence), and then port things over to this new sequence, and try to predict this new sequence, seeding it with the first sequence, instead of with the previous states of the second sequence. In some crude (or brilliant) sense, it's a single sequence problem, except this sequence has a very special structure: it's a concatenation of two sequences.
 
 ### Bottleneck
 
+The more classical interpretation is the encoder-decoder framework: the first part is encoding the input sequence into a fixed-dimensional embedding, and then the decoder outputs a sequence. To make it variable length (instead of infinite), we simply let one of the possible outputs be an end-of-string token (which admittedly seems kind of crude, but works).^[Notice that this kind of only makes sense when you're dealing with categorical sequences, though I'm sure you can fenangle it to work with continuous values. Our particular use case is also categorical data.]
+
+The main problem with this approach is precisely the *bottleneck* architecture, and the way that outputs unfold over the sequence (i.e. the context is passed through instance by instance). Theoretically, there's nothing wrong (RNNs are Turing Complete), but in practice your long-range dependence falters pretty quickly. Then there's the computational hindrance where data has to be injested one by one, which is really slow. The Transformer architecture is a way of solving this problem (swapping out the RNN), by letting context happen simultaneously in some window via self-attention. However, it ultimately adopts the same encoder-decoder style architecture. It feels like actually, there's really only one solution to variable-length input/outputs (unless you have more structure, which we do).
+
+### RNNs/HMMs
+
+This reminds me of HMMs: you can think of the input sequence as the hidden states (which we usually don't have access to), and the output sequence as emitting from the hidden states. Of course, we already know from my ML class that there's a nice link between HMMs and RNNs (besides the names looking suspiciously similar). Of course, we don't actually want to use HMMs – the output would only be a function of the input at the respective time
 
 
-Note that sequence learning, when there's a one-to-one with input and output, isn't particularly difficult. You can almost think of it is as predicting a time series. The main difficulty there is getting in past information (instead of just treating it as independent draws). That's where you can use things like RNNs. The fact that they're similar to time series means you can probably just appropriate the theory from that field.
-
-Where things get more difficult is when you have variable inputs and outputs. The trick is to have something like an encoder-decoder architecture (with the middle being the bottleneck). This allows us to collapse the variable inputs into one fixed-dimensional embedding. Then, in order to produce variable outputs, we simply let one of the possible outputs be an end-of-string token (which admittedly seems kind of crude, but works).^[Notice that this kind of only makes sense when you're dealing with categorical sequences, though I'm sure you can fenangle it to work with continuous values. Our particular use case is also categorical data.]
-
-The main problem with this approach is precisely the *bottleneck* architecture, and the way that outputs unfold over the sequence (i.e. the context is passed through instance by instance). The Transformer architecture is a way of sidestepping this problem, by letting context happen simultaneously in some window via self-attention. However, it ultimately adopts the same encoder-decoder style architecture.
-
-It feels like actually, there's really only one solution to variable-length input/outputs (unless you have more structure, which we do).
 
 ### Random Size
 
