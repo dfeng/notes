@@ -32,12 +32,13 @@ Inspired by those probability puzzles where the sample size $n$ is random, one m
 
 ## Our Problem: Contiguous Subsets
 
-Our problem is, given an image (which you can think of as a *sequence* of columns), output a sequence of characters.
-
-This problem feels similar to something like determining the genes in a DNA sequence
+Our problem is, given an image (which you can think of as a *sequence* of columns), output a sequence of characters. It feels similar to something like determining the genes in a DNA sequence, though I imagine there's lots of biological priors that one can use there (and I vaguely remember that they use something like a HMM).
 
 ### Character Detection
 
 A common approach is to apply object detection algorithms to individual characters themselves (region + class). However, that feels like overkill for us. Firstly, the region detection algorithms are all bounding boxes. We actually don't need 2D detection, but simply 1D detection (i.e. detecting one-dimensional ranges – a question whether or not we want to enforce non-overlapping).
 
 The fact that we are operating in 1 dimension also seems to help with the second stage in typical OCR, which is to convert this collection of classes into a sequence. For us, the sequence is naturally defined if we assume non-overlapping (or just barely overlapping).
+
+The main issue is that these character-level detection algorithms require the region and class in the training data. This lets you match, and therefore train the model. If we don't have regions, and only a sequence of classes, the question is how do we match the predictions to the data that is differentiable.
+
