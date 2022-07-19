@@ -20,20 +20,24 @@ The main problem with this approach is precisely the *bottleneck* architecture, 
 
 ### RNNs/HMMs
 
-This reminds me of HMMs: you can think of the input sequence as the hidden states (which we usually don't have access to), and the output sequence as emitting from the hidden states. Of course, we already know from my ML class that there's a nice link between HMMs and RNNs (besides the names looking suspiciously similar). Of course, we don't actually want to use HMMs – the output would only be a function of the input at the respective time
-
-
-
-### Random Size
-
-Inspired by those probability puzzles where the sample size $n$ is random, one might be tempted to have one of the outputs be the length. I'm not sure how different it is compared to just having an EOS token.
+This reminds me of HMMs: you can think of the input sequence as the hidden states (which we usually don't have access to), and the output sequence as emitting from the hidden states. Of course, we already know from my ML class that there's a nice link between HMMs and RNNs (besides the names looking suspiciously similar). Of course, we don't actually want to use HMMs – the output would only be a function of the input at the respective time – but I suspect there's a way you could use the input both as part of the "initialization", as well as part of the context when decoding. The main problem with that is that then you're stuck with predicting the exact same size output.
 
 ### Pointer Networks
 
-Pointer networks are an interesting architecture that utilises attention to reference the input sequence, and works well for combinatorial problems like determining the convex hull of a point cloud.
+Pointer networks are an interesting architecture that utilises attention to reference the input sequence, and works well for combinatorial problems like determining the convex hull of a point cloud. The thing I described above feels kind of like that, except the things you point to are deterministic. Actually, that might be a way to sidestep the same size problem: you point back to the most relevant input, but it doesn't have to be exactly sequential.
+
+### Random Size
+
+Inspired by those probability puzzles where the sample size $n$ is random, one might be tempted to have one of the outputs be the length. I'm not sure how different it is compared to just having an EOS token though.
 
 ## Our Problem: Contiguous Subsets
 
 Our problem is, given an image (which you can think of as a *sequence* of columns), output a sequence of characters.
 
 This problem feels similar to something like determining the genes in a DNA sequence
+
+### Character Detection
+
+A common approach is to apply object detection algorithms to individual characters themselves (region + class). However, that feels like overkill for us. Firstly, the region detection algorithms are all bounding boxes. We actually don't need 2D detection, but simply 1D detection (i.e. detecting one-dimensional ranges – a question whether or not we want to enforce non-overlapping).
+
+The fact that we are operating in 1 dimension also seems to help with the second stage in typical OCR, which is to convert this collection of classes into a sequence. For us, the sequence is naturally defined if we assume non-overlapping (or just barely overlapping).
