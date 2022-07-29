@@ -8,8 +8,8 @@ via [@zhou2019objects]
 
 As is typical when training [[computer-vision-tasks]], this paper applies [[data-augmentations]] like flipping and scaling. The intuition here is just a straightforward way to expand the dataset distribution, as well as make the model *invariant* under such transformations.
 
-However, what is less typical is considering "test-time" augmentations. It's feels kind of like [[ensemble-methods]], since you're combining and averaging values from two "models", except it's a training-free direct function of the original model (in fact literally just the same model applied to different "views" of the same data point). Of course one can't help but also compare this to [[self-supervised-learning]].
+However, what is less typical is considering "test-time" augmentations. It's feels kind of like [[ensemble-methods]], since you're combining and averaging values from two "models", except it's a training-free, direct function of the original model (in fact literally just the same model applied to different "views" of the same data point). Of course one can't help but also compare this to [[self-supervised-learning]].
 
 Recall that the general idea of ensemble methods is that by taking averages of things that are hopefully decorrelated you keep a similar level of bias but decrease the variance, thereby reducing MSE. Usually what that means is you train these models separately on different views of the same dataset, and then combine the results.
 
-Here, instead, we take advantage of the augmentations and create slightly different "models" via these augmentations – this approach doesn't work if you don't train with them. At the same time, if these augmentations worked *perfectly*, then this test-time amalgamation would be moot (?).
+Here, instead, we take advantage of the augmentations and create slightly different "models" via these augmentations. I originally thought that the data augmentation step is necessary for the test-time augmentation to make sense, but I no longer think so.
