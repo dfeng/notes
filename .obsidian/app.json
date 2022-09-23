@@ -3,5 +3,6 @@
   "livePreview": true,
   "showFrontmatter": false,
   "promptDelete": false,
-  "fileSortOrder": "byModifiedTime"
+  "fileSortOrder": "byModifiedTime",
+  "alwaysUpdateLinks": true
 }

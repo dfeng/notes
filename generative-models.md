@@ -1,6 +1,6 @@
 # Generative Models
 
-I recently gave a talk about [[score-based models]], mostly based off this blog [post](https://yang-song.net/blog/2021/score/).
+I recently gave a talk about [[score-based-models]], mostly based off this blog [post](https://yang-song.net/blog/2021/score/).
 
 At its core, generative models produce samples from a (data) distribution. The first distinction to be made is the principle by which you tackle the problem. Treating it as an adversarial problem gives you [[generative-adversarial-networks]]; treating it more probabilistically or likelihood-based gives you basically the rest. However, there's an additional distinction here that I think is underappreciated, which is how you go about producing the samples, which you can do either like a statistician or like a machine-learning person.
 
@@ -10,4 +10,5 @@ On the other hand, ML tries to learn a model that takes random noise as input, a
 
 What's interesting (or confusing) is that you have this duality between score-based models and [[diffusion-models]], whereby they're effectively doing very similar things, except the biggest difference is that score-based models follow (at least theoretically) the Bayesian MCMC perspective, while diffusion models take the ML approach. Except, they're kind of the same thing, no? Or, at the very least, there was a lot of fruitful cross-pollination of ideas, which suggests that fundamentally they're doing roughly the same thing. So how does square with these fundamentally different ways of sampling?
 
-Secondly, if you look at how [[diffusion-models]] progress (this [GIF](https://www.reddit.com/r/StableDiffusion/comments/x63xhm/how_stable_diffusion_paints_your_image_iteration/) gives a good visualization), it is clearly doing what it set out to do, which is to reverse a diffusion process.
+If you look at how [[diffusion-models]] progress (this [GIF](https://www.reddit.com/r/StableDiffusion/comments/x63xhm/how_stable_diffusion_paints_your_image_iteration/) gives a good visualization), it is clearly doing what it set out to do, which is to reverse a diffusion process. This makes it clearly in the ML camp. However, it was the architectural changes inspired by [[score-based-models]] that led to diffusion models being actually useable; that is, [@NEURIPS2020_4c5bcfec] showed that with some tweaking, the ELBO in the reverse diffusion process was (effectively?) identical to the loss from the noise-conditional score-based models. This suggests to me that somehow doing a _combination_ of these two methods is the way to go. And actually, in some sense, that's what diffusion models are. The classic way of doing ML based generative models is to have a very complicated model but learn that transform in one go (see [[variational-autoencoders]] or [[normalising-flows]]). It turns out that a better way to do sampling is to sort of do what traditional MCMC methods do, which is to build processes that slowly mix to the right distribution.
+
