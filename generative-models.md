@@ -14,5 +14,8 @@ If you look at how [[diffusion-models]] progress (this [GIF](https://www.reddit.
 
 Note also that [[normalising-flows]] are also iterative, but they are mainly iterative by construction: you construct this transform as a composition of invertible functions, thereby making things tractible. In particular, there's no randomness involved, which I think is another crucial piece of the puzzle, that makes one think more about MCMC.
 
-## Modern day Distributions
+## Modern day distributions
 
+The classic application of MCMC is in calculating Bayesian posterior distributions, which can get pretty ugly, and somewhat high-dimensional. However, the more complicated, high-dimensional, the more difficult it was for MCMC methods to mix to the true distribution. However, we're still talking about (posteriors of) hierarchies of probability distributions.
+
+Consider the modern distribution of a vector that represents the visualisation of a celebrity face. Like much of ML, we are very far removed from the world of nice probability distributions. They're incredibly high-dimensional. They probably live on some low-dimensional manifold, but that manifold is probably not like the proper manifolds we think of in mathematics.
