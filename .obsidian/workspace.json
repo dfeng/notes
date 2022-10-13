@@ -1,0 +1,150 @@
+{
+  "main": {
+    "id": "36f51bdcf20985aa",
+    "type": "split",
+    "children": [
+      {
+        "id": "23e06623e093ac88",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8c541381bf01048e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "poker-ai.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "e6e326baffd354d0",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.0.0"
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "7d0f81d16f4dcf9c",
+    "type": "split",
+    "children": [
+      {
+        "id": "86a7da33382810d7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ee3617452237957b",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "byModifiedTime"
+              }
+            }
+          },
+          {
+            "id": "1d7c90a9b3436fa3",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "6af6a8a7d79dc78f",
+    "type": "split",
+    "children": [
+      {
+        "id": "a544f9eadcb89150",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "29c221c6ac1d5827",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "poker-ai.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "a2507aa1f4f6da76",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "alphabetical",
+                "useHierarchy": false
+              }
+            }
+          },
+          {
+            "id": "8625253dd2fbca9a",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "poker-ai.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "ribbon": {
+    "mostRecentAction": ""
+  },
+  "active": "e6e326baffd354d0",
+  "lastOpenFiles": [
+    "generalisation-literature-review.md",
+    "generalisation-theory.md",
+    "generalisation-paper.md",
+    "generalisation-from-batch.md",
+    "self-supervised-learning.md",
+    "generalisation.md",
+    "generative-models.md",
+    "score-based-models.md",
+    "multi-modal-learning.md",
+    "neural-paper.md"
+  ]
+}
