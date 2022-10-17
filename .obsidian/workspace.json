@@ -4,33 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "23e06623e093ac88",
+        "id": "7e5f986af4b14d6d",
         "type": "tabs",
         "children": [
           {
-            "id": "8c541381bf01048e",
+            "id": "53d08d96072106eb",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "poker-ai.md",
+                "file": "michael-jordan-plenary-talk.md",
                 "mode": "source",
                 "source": false
               }
             }
-          },
-          {
-            "id": "e6e326baffd354d0",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.0.0"
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -72,8 +61,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "6af6a8a7d79dc78f",
@@ -89,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "poker-ai.md",
+                "file": "michael-jordan-plenary-talk.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -117,7 +105,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "poker-ai.md",
+                "file": "michael-jordan-plenary-talk.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,17 +122,17 @@
   "ribbon": {
     "mostRecentAction": ""
   },
-  "active": "e6e326baffd354d0",
+  "active": "53d08d96072106eb",
   "lastOpenFiles": [
     "generalisation-literature-review.md",
-    "generalisation-theory.md",
-    "generalisation-paper.md",
-    "generalisation-from-batch.md",
-    "self-supervised-learning.md",
-    "generalisation.md",
-    "generative-models.md",
+    "convolutional-neural-networks.md",
+    "causality.md",
+    "text-recognition-review.md",
+    "sequence-learning.md",
+    "test-augmentation.md",
+    "diffusion-models.md",
     "score-based-models.md",
-    "multi-modal-learning.md",
-    "neural-paper.md"
+    "generative-models.md",
+    "generalisation-theory.md"
   ]
 }

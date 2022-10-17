@@ -4,5 +4,6 @@
   "showFrontmatter": false,
   "promptDelete": false,
   "fileSortOrder": "byModifiedTime",
-  "alwaysUpdateLinks": true
+  "alwaysUpdateLinks": true,
+  "showInlineTitle": false
 }
