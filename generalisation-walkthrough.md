@@ -1,1 +1,1 @@
-The way I think about it
+The idea

@@ -116,8 +116,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "ribbon": {
     "mostRecentAction": ""
