@@ -11,12 +11,8 @@
             "id": "6428099b9802e37a",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "generalisation-walkthrough.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "graph",
+              "state": {}
             }
           }
         ]
@@ -77,7 +73,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "generalisation-walkthrough.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +100,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "generalisation-walkthrough.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,6 +117,7 @@
   },
   "active": "6428099b9802e37a",
   "lastOpenFiles": [
+    "generalisation-walkthrough.md",
     "michael-jordan-plenary-talk.md",
     "generalisation-literature-review.md",
     "convolutional-neural-networks.md",
@@ -131,7 +126,6 @@
     "sequence-learning.md",
     "test-augmentation.md",
     "diffusion-models.md",
-    "score-based-models.md",
-    "generative-models.md"
+    "score-based-models.md"
   ]
 }
