@@ -30,9 +30,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "61ceb5c7defe89ea",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ml-ab-testing.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -90,7 +102,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "to-e2e-or-not.md",
+                "file": "ml-ab-testing.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +130,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "to-e2e-or-not.md",
+                "file": "ml-ab-testing.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,8 +146,9 @@
   "ribbon": {
     "mostRecentAction": ""
   },
-  "active": "5bf8cbf289d4dbcc",
+  "active": "61ceb5c7defe89ea",
   "lastOpenFiles": [
+    "to-e2e-or-not.md",
     "generalisation-walkthrough.md",
     "michael-jordan-plenary-talk.md",
     "generalisation-literature-review.md",
@@ -144,7 +157,6 @@
     "text-recognition-review.md",
     "sequence-learning.md",
     "test-augmentation.md",
-    "diffusion-models.md",
-    "score-based-models.md"
+    "diffusion-models.md"
   ]
 }
