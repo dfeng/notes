@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "5bf8cbf289d4dbcc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "to-e2e-or-not.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -77,7 +90,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "generalisation-walkthrough.md",
+                "file": "to-e2e-or-not.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "generalisation-walkthrough.md",
+                "file": "to-e2e-or-not.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -121,7 +134,7 @@
   "ribbon": {
     "mostRecentAction": ""
   },
-  "active": "8f309179042f4fef",
+  "active": "5bf8cbf289d4dbcc",
   "lastOpenFiles": [
     "generalisation-walkthrough.md",
     "michael-jordan-plenary-talk.md",
