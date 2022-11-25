@@ -8,18 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "8f309179042f4fef",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "generalisation-walkthrough.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "5bf8cbf289d4dbcc",
             "type": "leaf",
             "state": {
@@ -44,7 +32,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -143,20 +131,17 @@
     "direction": "horizontal",
     "width": 300
   },
-  "ribbon": {
-    "mostRecentAction": ""
-  },
   "active": "61ceb5c7defe89ea",
   "lastOpenFiles": [
     "to-e2e-or-not.md",
     "generalisation-walkthrough.md",
-    "michael-jordan-plenary-talk.md",
-    "generalisation-literature-review.md",
-    "convolutional-neural-networks.md",
-    "causality.md",
-    "text-recognition-review.md",
-    "sequence-learning.md",
-    "test-augmentation.md",
-    "diffusion-models.md"
+    "neural-paper.md",
+    "neural-representations.md",
+    "from-nerf-to-kernel-regression.md",
+    "dataset-meta-learning-from-kernel-regression.md",
+    "slack-bot.md",
+    "embeddings-cant-possibly-be-right.md",
+    "explainable-trees.md",
+    "self-supervised-learning.md"
   ]
 }

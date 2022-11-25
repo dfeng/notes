@@ -19,3 +19,7 @@ So, the story is something like:
  - fourier features allow us to bypass/circumvent this worst-case. this is as good a free lunch, in that for not much work, you've made MLPs much more expressive as function approximators.
  - however, this comes at a cost. namely, that now we're very sensitive to noise
  - this is because we're directly estimating the noise.
+
+## Generative Models
+
+It feels like image generative models could be combined with fourier features. Note though that we're talking about two different things: generative models want to output an image (a very high-dimensional vector); meanwhile, fourier features is all about going from location to pixel value, as a way of representing a single image.
