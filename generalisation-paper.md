@@ -10,3 +10,13 @@ A weaker form of cross-validation, one that relaxes the hold-out set condition, 
 But that's just mini-batch SGD
 
 The key thing is that we've been thinking about SGD and generalisation all wrong. We start with the assumption that SGD is GD + noise, for instance (SGD's noise doing some implicit regularisation might make sense). But really we should realize that GD wasn't even the thing we wanted to optimize for in the first place, as one would naturally overfit without any regularisation.
+
+## What is Generalisation even?
+
+
+
+## Experiments
+
+The empirical claim is that SGD is doing something like CV, or more accurately, that SGD should have lower CV error than GD.
+
+It would also be good to show that, you can come up with examples where CV and generalisation error don't necessarily go hand in hand. Then, what we would expect is that SGD doesn't actually improve generalisation in such settings?

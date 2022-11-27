@@ -4,35 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "026d1a31f1c5e1da",
+        "id": "d8e31f978ec1093c",
         "type": "tabs",
         "children": [
           {
-            "id": "5bf8cbf289d4dbcc",
+            "id": "608e0a551093dd01",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "to-e2e-or-not.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "61ceb5c7defe89ea",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ml-ab-testing.md",
+                "file": "generalisation-paper.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -90,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ml-ab-testing.md",
+                "file": "generalisation-paper.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +105,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ml-ab-testing.md",
+                "file": "generalisation-paper.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -131,17 +118,17 @@
     "direction": "horizontal",
     "width": 300
   },
-  "active": "61ceb5c7defe89ea",
+  "active": "608e0a551093dd01",
   "lastOpenFiles": [
-    "to-e2e-or-not.md",
+    "generalisation-theory.md",
+    "generalisation-paper.md",
     "generalisation-walkthrough.md",
+    "to-e2e-or-not.md",
+    "ml-ab-testing.md",
     "neural-paper.md",
     "neural-representations.md",
     "from-nerf-to-kernel-regression.md",
     "dataset-meta-learning-from-kernel-regression.md",
-    "slack-bot.md",
-    "embeddings-cant-possibly-be-right.md",
-    "explainable-trees.md",
-    "self-supervised-learning.md"
+    "slack-bot.md"
   ]
 }
