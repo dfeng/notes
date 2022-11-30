@@ -11,4 +11,3 @@
 > Since the adaptive classifier may have learned something useful too late to make a contribution near the top of the page, a second pass is run over the page, in which words that were not recognized well enough are recognized again.
 > 
 > A final phase resolves fuzzy spaces, and checks alternative hypotheses for the x-height to locate small-cap text.
-
