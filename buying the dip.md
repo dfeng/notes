@@ -4,7 +4,7 @@
 
 What exactly is going on with Deep Image Priors?
 
-
+You're
 
 What would a "prior" regarding natural images constitute?
 
