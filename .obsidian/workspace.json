@@ -32,6 +32,18 @@
             }
           },
           {
+            "id": "f240cf9a74bccfb1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "buying the dip.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "5b9cc3767bbe5522",
             "type": "leaf",
             "state": {
@@ -44,7 +56,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -102,7 +114,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "generalisation-revisited.md",
+                "file": "buying the dip.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,7 +142,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "generalisation-revisited.md",
+                "file": "buying the dip.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -144,17 +156,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "3e9568eb6655c57f",
+  "active": "f240cf9a74bccfb1",
   "lastOpenFiles": [
-    "generalisation-paper.md",
+    "#.md",
     "generalisation-revisited.md",
+    "generalisation-paper.md",
     "ocr.md",
     "text-recognition-review.md",
     "text-recognition.md",
     "generalisation.md",
     "generalisation-theory.md",
     "generalisation-walkthrough.md",
-    "to-e2e-or-not.md",
-    "ml-ab-testing.md"
+    "to-e2e-or-not.md"
   ]
 }
