@@ -1,4 +1,4 @@
-# Not buying the DIP
+# Should you buy the DIP?
 
 (A critical view of Deep Image Priors)
 
