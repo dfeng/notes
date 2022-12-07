@@ -4,7 +4,11 @@
 
 What exactly is going on with Deep Image Priors?
 
-You're
+A few weird things:
+
+They do noise-based regularization (see Section 4), which means at each iteration they perturb the input $z$ by some additive gaussian noise. The fact that they perturb the input (even ever so slightly) essentially means, what they're learning is agnostic to the input, but kind of takes aggregated noise to create a signal...
+
+
 
 What would a "prior" regarding natural images constitute?
 
