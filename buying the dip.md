@@ -3,9 +3,6 @@
 (A critical view of Deep Image Priors)
 
 
-
-
-
 What exactly is going on with Deep Image Priors?
 
 A few weird things:
@@ -21,5 +18,6 @@ We know from image compression that the fourier basis lends itself to a sparser 
  - DIP can be replicated by a decoder-only architecture, showing that it is the decoder that is the key
 
  
- - [ ] Look into transpose convolutions for the upsample step
+ - [x] Look into transpose convolutions for the upsample step
  - [ ] MLP-Mixer? What if you replace the Conv layers with MLP-Mixer style FC layers?
+ - [ ] Add loss function that's only on the *test* data. There might be a trade-off between accuracy on the train vs test.
