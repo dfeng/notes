@@ -2,11 +2,15 @@
 
 (A critical view of Deep Image Priors)
 
+
+
+
+
 What exactly is going on with Deep Image Priors?
 
 A few weird things:
 
-They do noise-based regularization (see Section 4), which means at each iteration they perturb the input $z$ by some additive gaussian noise. The fact that they perturb the input (even ever so slightly) essentially means, what they're learning is agnostic to the input, but kind of takes aggregated noise to create a signal. This is probably why something like a BN layer is important, to get that kind of effect.
+They do *noise-based regularization* (see Section 4), which means at each iteration they perturb the input $z$ by some additive gaussian noise. The fact that they perturb the input (even ever so slightly) essentially means, what they're learning is agnostic to the input, but kind of takes aggregated noise to create a signal. This is probably why something like a BN layer is important, to get that kind of effect.
 
 
 
