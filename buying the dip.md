@@ -30,3 +30,5 @@ We know from image compression that the fourier basis lends itself to a sparser 
  - [x] Look into transpose convolutions for the upsample step: performs slightly worse
  - [ ] MLP-Mixer? What if you replace the Conv layers with MLP-Mixer style FC layers?
  - [ ] Add loss function that's only on the *test* data. There might be a trade-off between accuracy on the train vs test.
+ - [ ] What if you use two/multiple images when "training"?
+ - [ ] Check if it matters that outputs are in the 0-255 range instead of 0-1 range!
