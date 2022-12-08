@@ -10,6 +10,10 @@ What's important is going from small to large (plus the upsampling)? The fact th
 
 It's kind of like the intuition for autoencoders and bottleneck architectures: you only have so much to work with once you've reduced the dimensions down, and so things naturally have to be somewhat smooth.
 
+The other thing is that, I think it's very (inverse) problem dependent. We already know that given that in the paper they tweaked the architecture for each type of problem. In general though I think this class of problems does nicely tease out what we want, but we just have to be careful about what exactly is going on.
+
+Firstly, both inpainting and super-resolution can be thought of as two examples of masked learning.^[It's probably interesting to think about how that relates to all the self-supervised stuff on masked learning. It seems like you can get pretty far, if the masks aren't that ridiculous without any training.] That itself reminds me of [[matrix-completion]].
+
 A few weird things:
 
 They do *noise-based regularization* (see Section 4), which means at each iteration they perturb the input $z$ by some additive gaussian noise. The fact that they perturb the input (even ever so slightly) essentially means, what they're learning is agnostic to the input, but kind of takes aggregated noise to create a signal. This is probably why something like a BN layer is important, to get that kind of effect.
