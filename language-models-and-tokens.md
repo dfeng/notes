@@ -1,5 +1,7 @@
 # Language Models: Fancy Number Pattern Matching
 
+Update: someone just posted this paper to [arXiv](https://arxiv.org/abs/2212.03551).
+
 Suppose I gave you a really, really long list of numbers (or symbols, or anything). Like, a really, really long list. And it's effectively random, from what you can tell. You're told there's a method to this madness/randomness. You see glimpses of repeated structures, kind of. But it's mostly just appears random.
 
 It might help to think of it as numbers in base $|V|$, which is usually a pretty large number, but there's no ordering of the numbers. Perhaps that number of unique shades of a color.
@@ -15,6 +17,8 @@ But I think what I want to emphasize here is that, it's so easy for us to just w
 The reason why I think this might be useful is because, we see things like GPT-3 working so well, and we assume okay it must be able to do some kind of reasoning, or doing something similar to what we do. But it's a priori not guaranteed that the scaffolding we use to write sentences and paragraphs would be the same one that is learned by these models. Granted, it is the only way I can think of actually being able to predict things well, so it is probably doing something approximately similar. But there might be some way of interpreting and predicting the symbols that don't match our interpretation.
 
 I guess another way to put this is that, neural networks are generally "lazy". Why would they build a model of the world to predict the next word in a sentence. They'll pick up on shortcuts and patterns, and it will feel similar to what we do, but really, deep down, it's just doing complicated symbol prediction!
+
+
 
 ## PI?
 

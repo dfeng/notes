@@ -68,7 +68,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -126,7 +126,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "language-models-and-tokens.md",
+                "file": "buying the dip.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -154,7 +154,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "language-models-and-tokens.md",
+                "file": "buying the dip.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -168,8 +168,9 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "4ac48e34f78e8ccc",
+  "active": "f240cf9a74bccfb1",
   "lastOpenFiles": [
+    "language-models-and-tokens.md",
     "buying the dip.md",
     "generalisation-paper.md",
     "generalisation-revisited.md",
@@ -178,7 +179,6 @@
     "text-recognition-review.md",
     "text-recognition.md",
     "generalisation.md",
-    "generalisation-theory.md",
-    "generalisation-walkthrough.md"
+    "generalisation-theory.md"
   ]
 }
