@@ -2,6 +2,10 @@
 
 (A critical view of Deep Image Priors)
 
+What?
+
+Let's learn a function from a single point in some random space, to a single point in image space.
+
 What exactly is going on with Deep Image Priors?
 
 Here's what I think is going on:
