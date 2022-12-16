@@ -1,5 +1,7 @@
 # Language Models: Fancy Number Pattern Matching
 
+Is this a valid proof of the infeasibility, or perhaps undecidedibility of language models? As everyone likes to explain as if it's a fatal flaw, all language models are doing are predicting the next word. My simple argument is that, the learned "world model" doesn't have to be anything related to our world.
+
 Update: someone just posted this paper to [arXiv](https://arxiv.org/abs/2212.03551).
 
 Suppose I gave you a really, really long list of numbers (or symbols, or anything). Like, a really, really long list. And it's effectively random, from what you can tell. You're told there's a method to this madness/randomness. You see glimpses of repeated structures, kind of. But it's mostly just appears random.
@@ -17,6 +19,18 @@ But I think what I want to emphasize here is that, it's so easy for us to just w
 The reason why I think this might be useful is because, we see things like GPT-3 working so well, and we assume okay it must be able to do some kind of reasoning, or doing something similar to what we do. But it's a priori not guaranteed that the scaffolding we use to write sentences and paragraphs would be the same one that is learned by these models. Granted, it is the only way I can think of actually being able to predict things well, so it is probably doing something approximately similar. But there might be some way of interpreting and predicting the symbols that don't match our interpretation.
 
 I guess another way to put this is that, neural networks are generally "lazy". Why would they build a model of the world to predict the next word in a sentence. They'll pick up on shortcuts and patterns, and it will feel similar to what we do, but really, deep down, it's just doing complicated symbol prediction!
+
+## Path
+
+Speaking of graphs, perhaps we can think of a sequence of text as a path from left to right, and the colors of the nodes correspond to the words. This might relate to the section below...
+
+## Word Embeddings?
+
+Not sure how good my above analogy is, as in general we are just not good about extracting patterns from things like a mass of symbols. So perhaps we should start with a simpler problem, and see how far we can go. Word embeddings seem like a more tractable thing – the simple idea there is to extract meaning through colocation.
+
+The way we think about them is more, hey, look how surprisingly close they correspond to our understand!
+
+Actually, we can make the situation even more believable. Suppose someone who's only versed in English was given a hundred chinese texts. Could they start to piece together meaning? Is this meaningful?
 
 ## PI?
 
