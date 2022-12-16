@@ -18,8 +18,6 @@ The reason why I think this might be useful is because, we see things like GPT-3
 
 I guess another way to put this is that, neural networks are generally "lazy". Why would they build a model of the world to predict the next word in a sentence. They'll pick up on shortcuts and patterns, and it will feel similar to what we do, but really, deep down, it's just doing complicated symbol prediction!
 
-
-
 ## PI?
 
 As an aside, I wonder if there's something interesting about using NLP to try to predict/learn the digits of pi ([someone's thought of this before on reddit](https://www.reddit.com/r/MachineLearning/comments/f8x5if/predict_the_next_digit_of_pi_d/))?
