@@ -4,7 +4,9 @@
 
 What?
 
-Let's learn a function from a single point in some random space, to a single point in image space.
+Let's learn a function from a single point in some random space, to a single point in image space. Firstly, this feels very weird. [[from-nerf-to-kernel-regression]] is already pretty weird, but at least you're learning a map from input space to pixel space. Here you're also just using one image, but the single image is the single data point. Or, it's the whole dataset. SGD be damned. So we really are just performing full gradient descent on the loss, and seeing where it converges.
+
+It definitely feels more like what you do with auto-encoder architectures.
 
 What exactly is going on with Deep Image Priors?
 
@@ -34,5 +36,5 @@ We know from image compression that the fourier basis lends itself to a sparser 
  - [x] Look into transpose convolutions for the upsample step: performs slightly worse
  - [ ] MLP-Mixer? What if you replace the Conv layers with MLP-Mixer style FC layers?
  - [ ] Add loss function that's only on the *test* data. There might be a trade-off between accuracy on the train vs test.
- - [ ] What if you use two/multiple images when "training"?
+ - [x] What if you use two/multiple images when "training"?
  - [ ] Check if it matters that outputs are in the 0-255 range instead of 0-1 range!
