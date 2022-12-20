@@ -56,6 +56,16 @@
             }
           },
           {
+            "id": "008533dd3b600bba",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.1.8"
+              }
+            }
+          },
+          {
             "id": "5b9cc3767bbe5522",
             "type": "leaf",
             "state": {
@@ -68,7 +78,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -168,7 +178,16 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "4ac48e34f78e8ccc",
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "command-palette:Open command palette": false,
+      "markdown-importer:Open format converter": false
+    }
+  },
+  "active": "008533dd3b600bba",
   "lastOpenFiles": [
     "buying the dip.md",
     "language-models-and-tokens.md",
