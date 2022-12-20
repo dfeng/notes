@@ -30,55 +30,9 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "f240cf9a74bccfb1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "buying the dip.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "4ac48e34f78e8ccc",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "language-models-and-tokens.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "008533dd3b600bba",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.1.8"
-              }
-            }
-          },
-          {
-            "id": "5b9cc3767bbe5522",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ocr.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -136,7 +90,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "language-models-and-tokens.md",
+                "file": "generalisation-revisited.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -164,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "language-models-and-tokens.md",
+                "file": "generalisation-revisited.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -187,17 +141,17 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "008533dd3b600bba",
+  "active": "3e9568eb6655c57f",
   "lastOpenFiles": [
-    "buying the dip.md",
-    "language-models-and-tokens.md",
     "generalisation-paper.md",
     "generalisation-revisited.md",
     "ocr.md",
+    "Untitled.canvas",
+    "buying the dip.md",
+    "language-models-and-tokens.md",
     "#.md",
     "text-recognition-review.md",
     "text-recognition.md",
-    "generalisation.md",
-    "generalisation-theory.md"
+    "generalisation.md"
   ]
 }
