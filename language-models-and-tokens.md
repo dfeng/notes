@@ -1,5 +1,11 @@
 # Language Models: Fancy Number Pattern Matching
 
+## Proof
+
+Recall that with language models (and all natural language processing of late), our language is tokenized. Thus, at a fundamental level, the data these models ingest are exchangeable tokens. Recall also that the way in which we train models is by predicting the next word/token. This fact has been used as "proof" as to why language models cannot possibly be learning anything meaningful.
+
+## Introduction
+
 Is this a valid proof of the infeasibility, or perhaps undecidedibility of language models? As everyone likes to explain as if it's a fatal flaw, all language models are doing are predicting the next word. My simple argument is that, the learned "world model" doesn't have to be anything related to our world.
 
 Update: someone just posted this paper to [arXiv](https://arxiv.org/abs/2212.03551).

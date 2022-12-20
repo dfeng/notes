@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "generalisation-revisited.md",
+                "file": "language-models-and-tokens.md",
                 "mode": "source",
                 "source": false
               }
@@ -90,7 +90,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "generalisation-revisited.md",
+                "file": "language-models-and-tokens.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "generalisation-revisited.md",
+                "file": "language-models-and-tokens.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -143,12 +143,12 @@
   },
   "active": "3e9568eb6655c57f",
   "lastOpenFiles": [
-    "generalisation-paper.md",
-    "generalisation-revisited.md",
-    "ocr.md",
-    "Untitled.canvas",
     "buying the dip.md",
     "language-models-and-tokens.md",
+    "generalisation-revisited.md",
+    "generalisation-paper.md",
+    "ocr.md",
+    "Untitled.canvas",
     "#.md",
     "text-recognition-review.md",
     "text-recognition.md",
