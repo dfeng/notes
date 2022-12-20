@@ -2,7 +2,9 @@
 
 ## Proof
 
-Recall that with language models (and all natural language processing of late), our language is tokenized. Thus, at a fundamental level, the data these models ingest are exchangeable tokens. Recall also that the way in which we train models is by predicting the next word/token. This fact has been used as "proof" as to why language models cannot possibly be learning anything meaningful.
+Recall that with language models (and all natural language processing of late), our language is tokenized. Thus, at a fundamental level, the data these models ingest are exchangeable tokens. Recall also that the way in which we train models is by predicting the next word/token. This fact has been used as "proof" as to why language models cannot possibly be learning anything meaningful. However, it might be the case that, in order to correctly predict the next word in a sentence, one must first understand the whole world.
+
+However, herein lies the problem with our current paradigm using tokenization. 
 
 ## Introduction
 
