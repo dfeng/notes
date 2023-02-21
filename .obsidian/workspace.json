@@ -4,28 +4,28 @@
     "type": "split",
     "children": [
       {
-        "id": "d8e31f978ec1093c",
+        "id": "7243305a285a0826",
         "type": "tabs",
         "children": [
           {
-            "id": "608e0a551093dd01",
+            "id": "52aeac36846fca8e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "generalisation-paper.md",
+                "file": "sequence-learning.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "3e9568eb6655c57f",
+            "id": "e61e50a20592e9b6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "buying the dip.md",
+                "file": "machine-learning-in-practice.md",
                 "mode": "source",
                 "source": false
               }
@@ -90,7 +90,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "buying the dip.md",
+                "file": "machine-learning-in-practice.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "buying the dip.md",
+                "file": "machine-learning-in-practice.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -141,17 +141,17 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "3e9568eb6655c57f",
+  "active": "e61e50a20592e9b6",
   "lastOpenFiles": [
-    "language-models-and-tokens.md",
-    "buying the dip.md",
-    "generalisation-revisited.md",
+    "sequence-learning.md",
+    "machine-learning-in-practice.md",
     "generalisation-paper.md",
+    "buying the dip.md",
+    "language-models-and-tokens.md",
+    "generalisation-revisited.md",
     "ocr.md",
     "Untitled.canvas",
     "#.md",
-    "text-recognition-review.md",
-    "text-recognition.md",
-    "generalisation.md"
+    "text-recognition-review.md"
   ]
 }
