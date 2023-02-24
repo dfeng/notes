@@ -13,26 +13,38 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "sequence-learning.md",
+                "file": "draft-dip-nerf.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "e61e50a20592e9b6",
+            "id": "0c0091acddae1783",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "machine-learning-in-practice.md",
+                "file": "neural-representations.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "d13aa1876b2b713c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "neural-representations.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -90,7 +102,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "machine-learning-in-practice.md",
+                "file": "neural-representations.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +130,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "machine-learning-in-practice.md",
+                "file": "neural-representations.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -141,17 +153,17 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "e61e50a20592e9b6",
+  "active": "d13aa1876b2b713c",
   "lastOpenFiles": [
-    "sequence-learning.md",
+    "draft-dip-nerf.md",
+    "neural-representations.md",
+    "from-nerf-to-kernel-regression.md",
+    "buying-the-dip.md",
+    "vision-transformers.md",
+    "how-do-vision-transformers-work.md",
     "machine-learning-in-practice.md",
-    "generalisation-paper.md",
-    "buying the dip.md",
     "language-models-and-tokens.md",
-    "generalisation-revisited.md",
-    "ocr.md",
-    "Untitled.canvas",
-    "#.md",
-    "text-recognition-review.md"
+    "sequence-learning.md",
+    "generalisation-paper.md"
   ]
 }
