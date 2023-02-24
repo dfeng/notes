@@ -43,8 +43,7 @@
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -102,7 +101,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "neural-representations.md",
+                "file": "draft-dip-nerf.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,7 +129,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "neural-representations.md",
+                "file": "draft-dip-nerf.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -153,10 +152,10 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "d13aa1876b2b713c",
+  "active": "52aeac36846fca8e",
   "lastOpenFiles": [
-    "draft-dip-nerf.md",
     "neural-representations.md",
+    "draft-dip-nerf.md",
     "from-nerf-to-kernel-regression.md",
     "buying-the-dip.md",
     "vision-transformers.md",
