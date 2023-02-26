@@ -154,15 +154,15 @@
   },
   "active": "52aeac36846fca8e",
   "lastOpenFiles": [
-    "neural-representations.md",
+    "embeddings-cant-possibly-be-right.md",
     "draft-dip-nerf.md",
+    "neural-representations.md",
     "from-nerf-to-kernel-regression.md",
     "buying-the-dip.md",
     "vision-transformers.md",
     "how-do-vision-transformers-work.md",
     "machine-learning-in-practice.md",
     "language-models-and-tokens.md",
-    "sequence-learning.md",
-    "generalisation-paper.md"
+    "sequence-learning.md"
   ]
 }
