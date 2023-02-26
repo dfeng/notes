@@ -25,14 +25,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "neural-representations.md",
+                "file": "from-nerf-to-kernel-regression.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "d13aa1876b2b713c",
+            "id": "bc3f3fed88dcca60",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -43,7 +43,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -101,7 +102,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "draft-dip-nerf.md",
+                "file": "from-nerf-to-kernel-regression.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +130,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "draft-dip-nerf.md",
+                "file": "from-nerf-to-kernel-regression.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -152,12 +153,12 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "52aeac36846fca8e",
+  "active": "0c0091acddae1783",
   "lastOpenFiles": [
-    "embeddings-cant-possibly-be-right.md",
     "draft-dip-nerf.md",
-    "neural-representations.md",
     "from-nerf-to-kernel-regression.md",
+    "neural-representations.md",
+    "embeddings-cant-possibly-be-right.md",
     "buying-the-dip.md",
     "vision-transformers.md",
     "how-do-vision-transformers-work.md",
