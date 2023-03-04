@@ -42,8 +42,19 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "168155970acf3fc3",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.1.16"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -153,7 +164,7 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "1d7c90a9b3436fa3",
+  "active": "168155970acf3fc3",
   "lastOpenFiles": [
     "from-nerf-to-kernel-regression.md",
     "neural-representations.md",
