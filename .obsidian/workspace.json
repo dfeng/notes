@@ -37,24 +37,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "neural-representations.md",
+                "file": "draft-dip-nerf.md",
                 "mode": "source",
                 "source": false
               }
             }
-          },
-          {
-            "id": "168155970acf3fc3",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.1.16"
-              }
-            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -83,7 +73,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "basis",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -92,8 +82,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -164,10 +153,10 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "168155970acf3fc3",
+  "active": "bc3f3fed88dcca60",
   "lastOpenFiles": [
-    "from-nerf-to-kernel-regression.md",
     "neural-representations.md",
+    "from-nerf-to-kernel-regression.md",
     "draft-dip-nerf.md",
     "embeddings-cant-possibly-be-right.md",
     "buying-the-dip.md",

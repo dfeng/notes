@@ -1,4 +1,4 @@
-Neural Radiance Fields
+ Neural Radiance Fields
 
 A few notes on fourier embeddings
 
