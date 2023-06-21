@@ -8,11 +8,14 @@
   "outgoing-link",
   "tag-pane",
   "page-preview",
+  "daily-notes",
   "note-composer",
   "command-palette",
+  "slash-command",
   "editor-status",
   "bookmarks",
   "markdown-importer",
+  "outline",
   "word-count",
   "file-recovery"
 ]

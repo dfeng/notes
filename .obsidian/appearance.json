@@ -1,7 +1,7 @@
 {
   "baseFontSize": 16,
   "cssTheme": "Minimal",
-  "theme": "system",
+  "theme": "obsidian",
   "translucency": false,
-  "accentColor": ""
+  "accentColor": "#8d6cac"
 }
