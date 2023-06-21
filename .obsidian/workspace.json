@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "47bed2f7b1f3d81a",
+        "id": "82e5ce0c8c1e09b4",
         "type": "tabs",
         "children": [
           {
-            "id": "f2b2f1ff1770c49f",
+            "id": "a43b52fa19e93c1f",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -124,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "in-context-learning.md"
+              }
             }
           }
         ],
@@ -145,19 +147,23 @@
       "daily-notes:Open today's daily note": false
     }
   },
-  "active": "f2b2f1ff1770c49f",
+  "active": "a43b52fa19e93c1f",
   "lastOpenFiles": [
-    "buying-the-dip.md",
-    "in-context-learning.md",
-    "machine-learning-in-practice.md",
     "draft-dip-nerf.md",
+    "in-context-learning.md",
+    "generalisation-theory.md",
+    "poker-ai.md",
+    "to-e2e-or-not.md",
+    "ocr.md",
+    "language-models-and-tokens.md",
+    "buying-the-dip.md",
+    "machine-learning-in-practice.md",
     "from-nerf-to-kernel-regression.md",
     "fast-weights.md",
     "neural-representations.md",
     "embeddings-cant-possibly-be-right.md",
     "vision-transformers.md",
     "how-do-vision-transformers-work.md",
-    "language-models-and-tokens.md",
     "sequence-learning.md"
   ]
 }
