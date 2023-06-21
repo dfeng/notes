@@ -54,19 +54,9 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "5513e934b358617e",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.3.5"
-              }
-            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -183,7 +173,7 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "5513e934b358617e",
+  "active": "b1fed4137535fd2e",
   "lastOpenFiles": [
     "in-context-learning.md",
     "draft-dip-nerf.md",
