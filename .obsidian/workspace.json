@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "in-context-learning.md",
+                "file": "journal/2023-07-04.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "in-context-learning.md",
+                "file": "journal/2023-07-04.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "in-context-learning.md",
+                "file": "journal/2023-07-04.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "in-context-learning.md"
+                "file": "journal/2023-07-04.md"
               }
             }
           }
@@ -149,8 +149,9 @@
   },
   "active": "a43b52fa19e93c1f",
   "lastOpenFiles": [
-    "draft-dip-nerf.md",
     "in-context-learning.md",
+    "journal/2023-07-04.md",
+    "draft-dip-nerf.md",
     "generalisation-theory.md",
     "poker-ai.md",
     "to-e2e-or-not.md",
