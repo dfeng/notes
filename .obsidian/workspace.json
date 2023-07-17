@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "journal/2023-07-04.md",
+                "file": "journal/2023-07-17.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "journal/2023-07-04.md",
+                "file": "journal/2023-07-17.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "journal/2023-07-04.md",
+                "file": "journal/2023-07-17.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "journal/2023-07-04.md"
+                "file": "journal/2023-07-17.md"
               }
             }
           }
@@ -149,22 +149,31 @@
   },
   "active": "a43b52fa19e93c1f",
   "lastOpenFiles": [
-    "in-context-learning.md",
-    "journal/2023-07-04.md",
-    "draft-dip-nerf.md",
+    "generalisation.md",
+    "journal/2023-07-17.md",
+    "generalisation-from-batch.md",
+    "generalisation-walkthrough.md",
+    "neural-paper.md",
+    "from-nerf-to-kernel-regression.md",
     "generalisation-theory.md",
     "poker-ai.md",
+    "text-recognition-review.md",
+    "sequence-learning.md",
+    "score-based-models.md",
+    "diffusion-models.md",
+    "test-augmentation.md",
+    "generalisation-revisited.md",
+    "generalisation-paper.md",
+    "generalisation-literature-review.md",
+    "journal/2023-07-04.md",
+    "in-context-learning.md",
+    "draft-dip-nerf.md",
     "to-e2e-or-not.md",
     "ocr.md",
     "language-models-and-tokens.md",
     "buying-the-dip.md",
     "machine-learning-in-practice.md",
-    "from-nerf-to-kernel-regression.md",
     "fast-weights.md",
-    "neural-representations.md",
-    "embeddings-cant-possibly-be-right.md",
-    "vision-transformers.md",
-    "how-do-vision-transformers-work.md",
-    "sequence-learning.md"
+    "neural-representations.md"
   ]
 }
